@@ -1,0 +1,23 @@
+<button mat-button [matMenuTriggerFor]="menu">
+    <mat-icon>search</mat-icon>
+</button>
+<mat-menu #menu="matMenu">
+    <div class="search_main">
+        <mat-radio-group name="radio" formControlName="radioGrop" (change)="radioChange($event)">
+            <p>
+                <mat-radio-button value="productName" (click)="$event.stopPropagation()"
+                    (keyup.enter)="searchProducts(prdouctsearch.value)">{{'productName' | translate }}
+                </mat-radio-button>
+            </p>
+            <p>
+                <mat-radio-button value="productEdp" (click)="$event.stopPropagation()"
+                    (keyup.enter)="searchProducts(prdouctsearch.value)">{{'productEdp' | translate }}</mat-radio-button>
+            </p>
+        </mat-radio-group>
+        <mat-form-field>
+            <input #prdouctsearch matInput (keyup.enter)="searchProducts(prdouctsearch.value)"
+                (click)="$event.stopPropagation()">
+        </mat-form-field><br>
+        <button mat-button (click)="searchProducts(prdouctsearch.value)">{{'search' | translate }}</button><br>
+    </div>
+</mat-menu>

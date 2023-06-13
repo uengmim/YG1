@@ -1,0 +1,29 @@
+<nav class="docs-navbar-header">
+  <a class="docs-button" routerLink="/product" aria-label="Angular Material">
+    <img class="docs-yg1-logo" src="assets/img/yg-1_intro_logo.png">
+  </a>
+  <div class="navbar-title">
+    <b>{{ 'mainTitle' | translate:param }}</b>
+  </div>
+  <div class="flex-spacer"></div>
+
+  <div *ngIf="loginService.isUserLoggedIn()">
+    <a mat-button class="docs-navbar-hide-small docs-button" *ngFor="let section of sections"
+      routerLink="/{{section.key}}">{{section.name | translate:param }}</a>
+  </div>
+
+  <div *ngIf="loginService.isUserLoggedIn()">
+    <!-- <a mat-button routerLink="/ordermark">
+      <mat-icon>star</mat-icon>
+    </a> -->
+    <menu-picker></menu-picker>
+    <language-picker></language-picker>
+  </div>
+</nav>
+
+<nav class="docs-navbar docs-navbar-show-small">
+  <div class="docs-navbar  docs-navbar-show-small2" *ngIf="loginService.isUserLoggedIn()">
+    <a mat-button class="docs-navbar-link" *ngFor="let section of sections"
+      routerLink="/{{section.key}}">{{section.name}}</a>
+  </div>
+</nav>

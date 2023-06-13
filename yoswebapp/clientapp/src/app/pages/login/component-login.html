@@ -1,0 +1,22 @@
+<div class="container">
+<div class="login_main">
+  <form class="example-form" [formGroup]="formGroup">
+    <mat-form-field class="example-full-width">
+      <input matInput placeholder="{{'userName' | translate }}" formControlName="usrid" name="usrid">
+      <mat-error *ngIf="usrid.hasError('required')">
+        {{'userName' | translate }} {{'requiredMsg' | translate }}
+      </mat-error>
+    </mat-form-field><br>
+    <mat-form-field class="example-full-width">
+      <input matInput placeholder="{{'userPassword' | translate }}" type="password" formControlName="usrpw"  name="usrpw" (keyup.enter)="checkLogin()">
+      <mat-error *ngIf="usrpw.hasError('required')">
+        {{'userPassword' | translate }} {{'requiredMsg' | translate }}
+      </mat-error>
+    </mat-form-field>
+  </form>
+  <button mat-button (click)=checkLogin() class="btn btn-success">
+    {{'signIn' | translate }}
+  </button>
+  <img class="docs-yg1-background" src="assets/img/yg-1_mobile.jpg">
+</div>
+</div>

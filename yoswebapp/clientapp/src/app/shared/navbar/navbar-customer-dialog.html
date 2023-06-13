@@ -1,0 +1,41 @@
+<div class="container">
+    <form [formGroup]="formGroup">
+        <!-- <mat-form-field>
+            <mat-select placeholder="{{'userPlant' | translate }}" formControlName="plant">
+                <mat-option *ngFor="let plantList of plantList" value="{{plantList.socode}}"
+                    (focusout)="focusOutPL(plantList.socode)">
+                    {{plantList.soname}} ({{plantList.socode}})</mat-option>
+            </mat-select>
+        </mat-form-field> -->
+        <mat-form-field>
+            <mat-select placeholder="{{'option' | translate }}" formControlName="option" (selectionChange)="CustomerItems($event.value)">
+                <mat-option value="10">{{'domestic' | translate}}</mat-option>
+                <mat-option value="20">{{'export'|translate}}</mat-option>
+            </mat-select>
+        </mat-form-field>
+        <br>
+        <mat-form-field>
+            <mat-select placeholder="{{'userNo' | translate }}" formControlName="no">
+                <div class="select_filter">
+                    <!-- <div class="radio_btn">
+                    <mat-radio-group name="radio"  formControlName="radioGrop" (change)="radioChange($event)">
+                        <mat-radio-button value="all">{{'All' | translate }}</mat-radio-button>
+                        <mat-radio-button value="Domestic">{{'Domestic' | translate }}</mat-radio-button>
+                        <mat-radio-button value="Export">{{'Export' | translate }}</mat-radio-button>
+                      </mat-radio-group>
+                    </div> -->
+                    <mat-select-filter [array]="customerList2" placeholder="Name Search" [displayMember]="'custnm'"
+                        (filteredReturn)="filteredList =$event"></mat-select-filter>
+                    <mat-select-filter [array]="customerList2" placeholder="Number Search" [displayMember]="'cust'"
+                        (filteredReturn)="filteredList =$event"></mat-select-filter>
+                </div>
+                <mat-option *ngFor="let customerList of filteredList"
+                    value="{{customerList.cust}}">
+                    {{customerList.cust}} {{customerList.custnm}}</mat-option>
+            </mat-select>
+        </mat-form-field>
+    </form>
+    <button mat-button (click)="onClear()"> MANAGER </button>
+    <button mat-button (click)=onChange()>{{'ok' | translate }} </button>
+    <button mat-button (click)="onCancel()"> {{'cancel' | translate }} </button>
+</div>

@@ -1,0 +1,81 @@
+{
+    "mainTitle" : "온라인 주문시스템",
+
+    "products" : "제품조회",
+    "orders" : "주문내역",
+    "cart" : "장바구니",
+    "favorites" : "주요품목",
+    "bulkOrder" : "대량주문",
+    "orderForm" : "주문서 작성",
+    "account" : "계정 정보",
+    "editPassword" : "비밀번호 변경",
+    "editAccount" : "정보수정",
+    "createUser" : "고객등록",
+
+    "manual" : "사용자 메뉴얼",
+
+    "signIn" : "로그인",
+    "signOut" : "로그아웃",
+    "verify" : "로그인 아이디 : ",
+
+    "globalFilter" : "전체필터",
+    "requirements" : "요구사항",
+    "shipAddress" : "배송지",
+    "addressManagement" : "배송지 관리",
+
+    "newShipAddress" : "새 배송지 입력",
+    
+    "orderSelected" : "선택 제품 주문",
+    "deleteSelected" : "선택 제품 삭제",
+  
+    "cancle" : "닫기",
+    "submit" : "확인",
+    "edit" : "수정",
+    "delete" : "삭제",
+    "search" : "검색",
+    "fromDate" : "FROM DATE",
+    "toDate" : "TO DATE",
+
+    "productName" : "제품명",
+    "productEdp" : "EDP NO.",
+    "productSize" : "규격",
+    "productPrice" : "가격",
+    "productStock" : "재고",
+    "productPack" : "포장 단위",
+
+    "orderNo" : "주문번호",
+    "orderDate" : "주문 날짜",
+    "subtotalQty" : "총 수량",
+    "subtotalPrice" : "총 금액",
+    "orderStatus" : "처리 현황",
+    "orderRemark" : "비고",
+
+    "itmeNo" : "ITEM NO.",
+    "totalPrice" : "주문 금액",
+    "totalQty" : "주문 수량",
+    "shipmentPrice" : "출하 금액",
+    "shipmentQty" : "출하 수량",
+
+    "userName" : "아이디",
+    "userPassword" : "비밀번호",
+    "userConfirm" : "비밀번호 확인",
+    "userAuthority" : "권한",
+    "userLang" : "언어",
+    "userCompany" : "회사",
+    "userPlant" : "부서",
+    "userNo" : "고객 번호",
+
+    "cartQty" : "장바구니",
+    "qty" : "수량",
+    "quickOrder" : "바로 주문",
+    
+    "verifyMsg" : "계속하려면, 먼저 본인임을 확인하세요.",
+    "editCartMsg" : "장바구니 수량을 변경 하시겠습니까?",
+    "orderMsg" : "현재 수량을 주문 하시겠습니까?",
+    "ordersMsg" : "개 제품을 주문 하시겠습니까?",
+    "deleteItemMsgC" : "장바구니에서 삭제 하시겠습니까?",
+    "deleteItemsMsgC" : "개 제품을 장바구니에서 삭제 하시겠습니까?",
+    "addFavoriteMsg" : "주요품목에 추가 하시겠습니까?",
+    "deleteItemMsgF" : "주요품에서 삭제 하시겠습니까?"
+    
+}

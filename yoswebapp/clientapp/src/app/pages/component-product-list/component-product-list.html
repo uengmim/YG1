@@ -1,0 +1,76 @@
+
+    <div *ngIf="requestData" style="margin: 10px;">
+        <mat-chip-list class="sample-chip" aria-label="Fish selection">
+            <mat-chip>{{aClass}}</mat-chip>
+            <mat-chip>{{bClass}}</mat-chip>
+            <mat-chip color="primary" selected>{{cClass}}</mat-chip>
+        </mat-chip-list>
+    </div>
+
+
+    <mat-card class="sample-view" *ngFor="let DATA of DATA" [ngSwitch]='DATA.ordermark'>
+        <div class="sample-toggle" *ngSwitchCase="'1'">
+            <button mat-icon-button (click)="openOrderMarkDialog(DATA,DATA.ordermark)" onclick="this.blur()">
+                <mat-icon color="warn">star</mat-icon>
+            </button>
+        </div>
+        <div class="sample-toggle" *ngSwitchCase="'0'">
+            <button mat-icon-button (click)="openOrderMarkDialog(DATA,DATA.ordermark)" onclick="this.blur()">
+                <mat-icon color="warn">star_border</mat-icon>
+            </button>
+        </div>
+
+        <div class="sample-view-out">
+            <div class="sample-view-out-items">
+                <p><b>{{'productName' | translate }}</b> <br> {{DATA.product}}</p>
+            </div>
+            <div class="sample-view-out-items">
+                <p><b>{{'productEdp' | translate }}</b> <br> {{DATA.edp}}</p>
+            </div>
+            <div class="sample-view-out-items">
+                <p><b>{{'productSize' | translate }}</b> <br> {{DATA.standard}}</p>
+            </div>
+
+            <div class="sample-view-out-items">
+                <p><b>{{'productPrice' | translate }}</b> <br> {{DATA.price | currency : DATA.currency}}</p>
+                <!-- <p><b>{{'productPrice' | translate }}</b> <br> {{DATA.price | currency : 'KRW':'symbol-narrow'}}</p> -->
+            </div>
+
+            <div class="sample-view-out-items">
+                <p>
+                    <b>{{'productNetPrice' | translate }}</b>
+                    <br>
+
+                    <b style="font-weight: normal;"
+                        [ngStyle]="{'color' : DATA.netprice == 0.0? 'black' : DATA.netprice == DATA.price ? 'black' : 'red'}">
+                        {{ DATA.netprice | currency : DATA.currency}}
+                    </b>
+                </p>
+            </div>
+            <div class="sample-view-out-items">
+                <p><b>{{'productPack' | translate }}</b> <br> {{DATA.packing}}</p>
+            </div>
+
+            <div class="sample-view-out-items">
+                <p>
+                    <b>{{'productStock' | translate }}</b>
+                    <br><b class="subtitle">{{getVKeyTitle(DATA.vkey)}}</b>
+                    <br>{{getStock(DATA)}}
+                </p>
+            </div>
+        </div>
+        <div class="sample-button">
+            <div>
+                <button class="sample-button-cart" mat-raised-button (click)="openCartDialog(DATA.edp,DATA.cart,DATA)"
+                    onclick="this.blur()">
+                    {{'cartQty' | translate }} <b>({{DATA.cart}})</b>
+                </button>
+            </div>
+            <div>
+                <button class="sample-button-order" mat-raised-button
+                    (click)="openOrderDialog(DATA.product,DATA.edp,DATA.price,DATA)" onclick="this.blur()">
+                    {{'quickOrder' | translate }}
+                </button>
+            </div>
+        </div>
+    </mat-card>

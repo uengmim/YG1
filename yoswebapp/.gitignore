@@ -1,0 +1,81 @@
+# See http://help.github.com/ignore-files/ for more about ignoring files.
+
+# compiled output
+clientapp/dist
+clientapp/tmp
+clientapp/out-tsc
+# Only exists if Bazel was run
+clientapp/bazel-out
+
+# dependencies
+clientapp/node_modules
+clientapp/node
+
+# profiling files
+clientapp/chrome-profiler-events*.json
+clientapp/speed-measure-plugin*.json
+
+# IDEs and editors
+clientapp/.idea
+clientapp/.project
+clientapp/.classpath
+clientapp/.c9/
+clientapp/*.launch
+clientapp/.settings/
+clientapp/*.sublime-workspace
+
+# IDE - VSCode
+clientapp/.vscode/*
+clientapp/!.vscode/settings.json
+clientapp/!.vscode/tasks.json
+clientapp/!.vscode/launch.json
+clientapp/!.vscode/extensions.json
+clientapp/.history/*
+
+# misc
+clientapp/.sass-cache
+clientapp/connect.lock
+clientapp/coverage
+clientapp/libpeerconnection.log
+clientapp/npm-debug.log
+clientapp/yarn-error.log
+clientapp/testem.log
+clientapp/typings
+
+# System Files
+clientapp/.DS_Store
+clientapp/Thumbs.db
+
+
+
+HELP.md
+target/
+!.mvn/wrapper/maven-wrapper.jar
+!**/src/main/**
+!**/src/test/**
+
+### STS ###
+.apt_generated
+.classpath
+.factorypath
+.project
+.settings
+.springBeans
+.sts4-cache
+
+### IntelliJ IDEA ###
+.idea
+*.iws
+*.iml
+*.ipr
+
+### NetBeans ###
+/nbproject/private/
+/nbbuild/
+/dist/
+/nbdist/
+/.nb-gradle/
+build/
+
+### VS Code ###
+.vscode/

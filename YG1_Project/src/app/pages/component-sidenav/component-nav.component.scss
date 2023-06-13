@@ -1,0 +1,28 @@
+
+.mat-tree {
+    background-color: white;
+  }
+
+.docs-component-viewer-nav{
+  display: flex;
+  position: sticky;
+
+  margin-top: 10px;
+  margin-right: 10%;
+  top: 70px;
+  left: 0;
+  right: 1800px;
+  z-index: 2;
+ 
+}
+
+@media (max-width: 768px) {
+  .docs-component-viewer-nav{
+    position: relative;
+    width: 100%;
+    margin-left: 0;
+    top: 0;
+
+  }
+
+}

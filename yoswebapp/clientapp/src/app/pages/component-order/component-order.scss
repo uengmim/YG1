@@ -1,0 +1,482 @@
+@import "../../../styles/constants";
+.content {
+  display: flex;
+  text-align: center;
+  justify-content: center;
+}
+.actiondig {
+  justify-content: center;
+}
+
+table {
+  text-align: center !important;
+  width: 100%;
+}
+
+th.mat-header-cell {
+  text-align: center;
+}
+
+
+
+ 
+
+::ng-deep .mat-header-cell .mat-sort-header-container {
+  justify-content: center;
+  color: black;
+}
+
+td.mat-cell:last-of-type,
+td.mat-footer-cell:last-of-type,
+th.mat-header-cell:last-of-type {
+  padding-left: 0px;
+  padding-right: 0px;
+}
+td.mat-cell:first-of-type,
+td.mat-footer-cell:first-of-type,
+th.mat-header-cell:first-of-type {
+  padding-left: 0px;
+  padding-right: 0px;
+}
+
+tr.mat-footer-row {
+  font-weight: bold;
+}
+
+//웹 일때
+
+@media (min-width: 1025px) {
+
+  .remark-form {
+    width: 60%;
+  }
+  .ponumber-form {
+    width: 60%;
+  }
+
+  .deliveryType-form {
+    width: 60%;
+  }
+
+
+  //콤보박스 Container (내,외수 / 이름 / 버튼)
+  .Cutomer-container {
+    display: flex;
+    flex-wrap: nowrap;
+    width: 100%;
+
+    .Coutomer-container-content {
+      display: flex;
+
+      //내수,외수 Combo box
+      .Option-form {
+        margin-right: 15px;
+      }
+      //고객 선택
+      .Customer-form {
+        display: flex;
+        flex-flow: column;
+        width: 500px;
+      }
+    }
+    .Btn-address {
+      display: flex;
+    }
+  }
+
+  //배송지 Dialog
+  .destination-dialog {
+    width: 800px;
+    height: 750px;
+  }
+
+  //배송지 Dialog 상단 검색부분
+  .SearchFormField {
+    display: flex;
+    justify-content: center;
+  }
+  //배송지 Dialog 상단 Input
+  .destination-name-search {
+    width: 300px;
+    margin-right: 10px;
+  }
+  //배송지 Dialog 상단 Option
+  .select-search {
+    margin-right: 10px;
+    width: auto;
+  }
+  //배송지 Dialog 중단 Card 감싸는 부분
+  .destination-dialog-content {
+    display: flex;
+    flex-wrap: nowrap;
+    flex-direction: column;
+    border-bottom-style: groove;
+    border-top-style: groove;
+    height: 250px;
+    word-wrap: break-word;
+  }
+  //배송지 Dialog 중단 Card
+  .destination-card {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    justify-content: space-between;
+    align-items: stretch;
+    align-content: stretch;
+    text-align: center;
+    margin-top: 10px;
+    padding: 4px 10px 4px 10px;
+  }
+  //배송지 Dialog 중단 Cards 선택
+  .card-check {
+    display: flex;
+    flex-basis: 10%;
+    align-items: center;
+  }
+  //배송지 Dialog Card들의 내부 1,2,3,4 로 나뉨
+  .destination-card-list {
+    display: flex;
+    flex-basis: 90%;
+    flex-wrap: nowrap;
+    justify-content: space-between;
+    align-content: center;
+    align-items: center;
+  }
+  // .destination-card-list-items::nth-child(1) {
+  //   flex: 1;
+  // }
+  // .destination-card-list-items::nth-child(2) {
+  //   flex: 1;
+  // }
+  // .destination-card-list-items::nth-child(3) {
+  //   flex: 1;
+  // }
+  // .destination-card-list-items::nth-child(4) {
+  //   flex: 1;
+  // }
+
+  .destination-card-list-items{
+    flex: 2 0 1px !important;
+  }
+
+  //수기 작성 배송지
+  .destination-dialog-content-2 {
+    margin-left: 10px;
+    margin-right: 10px;
+    display: grid;
+    grid-template-columns: repeat(9, 1fr);
+    grid-template-rows: repeat(2, 1fr);
+    flex-wrap: nowrap;
+    flex-direction: column;
+
+    height: 260px;
+    word-wrap: break-word;
+  }
+
+  //배송지 수기입력 선택부분
+  .destination-add-check {
+    justify-content: center;
+    grid-row-start: 1;
+    grid-row-end: 3;
+    grid-column-start: 1;
+    grid-column-end: 2;
+    display: flex;
+    align-items: center;
+  }
+  //배송지 추가 부분 1,2,3,4 로 나뉨
+  .destination-write {
+    grid-column-start: 2;
+    grid-column-end: 10;
+    grid-row-start: 1;
+    grid-row-end: 3;
+    display: grid;
+    grid-template-columns: repeat(6, 1fr);
+    grid-template-rows: repeat(2, 1fr);
+  }
+  .destination-write-itmes:nth-child(1) {
+    display: flex;
+    justify-content: center;
+    grid-row-start: 1;
+    grid-row-end: 2;
+    grid-column: 1 /span 2;
+    flex-flow: column;
+    margin-left: 10px;
+  }
+  .destination-write-itmes:nth-child(2) {
+    display: flex;
+    justify-content: center;
+    grid-row-start: 1;
+    grid-row-end: 2;
+    grid-column: 3 /span 2;
+    flex-flow: column;
+    margin-left: 10px;
+  }
+  .destination-write-itmes:nth-child(3) {
+    display: flex;
+    justify-content: center;
+    grid-row-start: 1;
+    grid-row-end: 2;
+    grid-column: 5 /span 2;
+    flex-flow: column;
+    margin-left: 10px;
+    margin-right: 10px;
+  }
+  .destination-write-itmes:nth-child(4) {
+    display: flex;
+    justify-content: center;
+    grid-row-start: 2;
+    grid-row-end: 3;
+    grid-column: 1 /span 6;
+    flex-flow: column;
+    margin-left: 10px;
+    margin-right: 10px;
+  }
+
+
+  .destination-write-itmes:nth-child(5) {
+    display: flex;
+    justify-content: center;
+    grid-row-start: 3;
+    grid-row-end: 4;
+
+    grid-column: 1 /span 6;
+    flex-flow: column;
+    margin-left: 10px;
+    margin-right: 10px;
+  }
+
+  
+  .destination-write-itmes:nth-child(6) {
+    display: flex;
+    justify-content: center;
+    grid-row-start: 4;
+    grid-row-end: 5;
+    grid-column: 1 /span 3;
+    flex-flow: column;
+    margin-left: 10px;
+    margin-right: 10px;
+  }
+
+  
+  .destination-write-itmes:nth-child(7) {
+    display: flex;
+    justify-content: center;
+    grid-row-start: 4;
+    grid-row-end: 5;
+    grid-column: 4 /span 3;
+    flex-flow: column;
+    margin-left: 10px;
+    margin-right: 10px;
+  }
+
+  //배송지 Dialog 하단 버튼
+  .destination-button {
+    position: bottom;
+    display: flex;
+    align-items: center;
+  }
+}
+
+
+
+//모바일 일때
+@media (max-width: 1380px) {
+
+
+  //요구사항
+  .remark-form {
+    width: 100%;
+  }
+  //Po 번호
+  .ponumber-form {
+    width: 100%;
+  }
+
+  .deliveryType-form{
+    width:100%
+  }
+  //콤보박스 Container (내,외수 / 이름 / 버튼)
+  .Cutomer-container {
+    display: flex;
+    flex-wrap: wrap;
+    width: 100%;
+  }
+  //콤보박스 content (내,외수 / 이름)
+  .Coutomer-container-content {
+    display: contents;
+  }
+  //내수,외수 Combo box
+  .Option-form {
+    display: inherit;
+    width: 100px;
+    margin-right: 15px;
+  }
+  //고객 선택
+  .Customer-form {
+    display: inherit;
+    width: 220px;
+  }
+  //배송지관리 버튼
+  .Btn-address {
+    display: flex;
+  }
+  //배송지 Dialog 전체 내용물
+  .destination-dialog {
+    font-size: small;
+  }
+  //배송지 Dialog 상단 검색부분
+  .SearchFormField {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+  }
+  //배송지 Dialog 상단 Input
+  .destination-name-search {
+    width: 100px;
+    margin-right: 10px;
+  }
+  //배송지 Dialog 상단 Option
+  .select-search {
+    margin-right: 10px;
+    width: 100px;
+  }
+  //배송지 Dialog 중단 Card 감싸는 부분
+  .destination-dialog-content {
+    display: flex;
+    flex-wrap: nowrap;
+    flex-direction: column;
+    border-bottom-style: groove;
+    border-top-style: groove;
+    height: 28vh;
+    word-wrap: break-word;
+  }
+  //배송지 Dialog 중단 Card
+  .destination-card {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    justify-content: space-between;
+    align-items: stretch;
+    align-content: stretch;
+    text-align: center;
+    padding: 4px 10px 4px 10px;    
+    margin-bottom: 5px;
+  }
+  //배송지 Dialog 중단 Cards 선택
+  .card-check {
+    display: flex;
+    flex-basis: 10%;
+    align-items: center;
+  }
+  //배송지 Dialog Card들의 내부 1,2,3,4 로 나뉨
+  .destination-card-list {
+    display: flex;
+    flex-basis: 90%;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-content: center;
+    align-items: center;
+  }
+  // .destination-card-list-items::nth-child(1) {
+  //   flex: 1;
+  // }
+  // .destination-card-list-items::nth-child(2) {
+  //   flex: 1;
+  // }
+  // .destination-card-list-items::nth-child(3) {
+  //   flex: 1;
+  // }
+  // .destination-card-list-items::nth-child(4) {
+  //   flex: 1;
+  // }
+
+  .destination-card-list-items{
+    flex: 1 0 1px ;
+  }
+
+  @media (max-width: 600px){
+    .destination-card-list-items{
+      flex: 2 2 50% ;
+         }
+  
+  }
+  
+
+  //수기 작성 배송지
+  .destination-dialog-content-2 {
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+    width: auto;
+    height: 120px;
+    word-wrap: break-word;
+    justify-content: center;
+    margin-top: 10px;
+  }
+  //배송지 수기입력 선택부분
+  .destination-add-check {
+    display: flex;
+    flex-basis: 5%;
+    align-items: center;
+  }
+  .destination-write{
+    display: flex;
+    flex-wrap: wrap;
+    flex-basis: 90%;
+    justify-content: center;
+  }
+  .destination-write-itmes::nth-child(1){
+    flex: 1;
+  }
+  .destination-write-itmes::nth-child(2){
+    flex: 1;
+  }
+  .destination-write-itmes::nth-child(3){
+    flex: 1;
+  }
+  .destination-write-itmes::nth-child(4){
+    flex: 1;
+  }
+  .destination-write-itmes::nth-child(5){
+    flex: 1;
+  }
+  .destination-write-itmes::nth-child(6){
+    flex: 1;
+  }
+  .destination-write-itmes::nth-child(7){
+    flex: 1;
+  }
+
+  .destination-write-name{
+    margin-right : 10px
+  }
+  .destination-write-code{
+    margin-right : 10px
+  }
+  .destination-write-city{
+    margin-right : 10px
+  }
+  .destination-write-street{
+    margin-right : 10px
+  }
+
+  .destination-write-contactname{
+    margin-right : 10px
+  }
+
+  .destination-write-telnum{
+    margin-right : 10px
+  }
+
+  .destination-write-email{
+    margin-right : 10px
+  }
+
+
+  //배송지 Dialog 하단 버튼
+  .destination-button {
+    position: bottom;
+    display: flex;
+    align-items: center;
+  }
+}

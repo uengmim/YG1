@@ -1,0 +1,199 @@
+{
+    "mainTitle" : "Achat en Ligne",
+
+    "products" : "Nos produits",
+    "orders" : "Mes Commandes",
+    "cart" : "Mon Panier",
+    "favorites" : "Mes Favoris",
+    "bulkOrder" : "Télécharger ma commande",
+    "proxyOrder" : "Accès au compte",
+    "orderForm" : "Créer une commande",
+    "account" : "Mon Compte",
+    "changePassword" : "Changer Mon Mot de Passe",
+    "editAccount" : "Mettre à Jour Mon Compte",
+    "createAccount" : "Créer un compte",
+    "proxyBuying" : "Achat par Procuration",
+
+    "manual" : "Guide Utilisateur",
+
+    "signIn" : "Connexion",
+    "signOut" : "Déconnexion",
+    "verify" : "Connecté sous l'Identifiant",
+
+    "globalFilter" : "Filtre",
+    "requirements" : "Remarques",
+    "shipName" : "Destinataire",
+    "shipAddress" : "Adresse de Livraison",
+    "shipCode" : "Code Postal",
+    "addressManagement" : "Choisir l'adresse de livraison",
+
+    "enterShipAddress" : "Créer une Adresse de Livraison",
+    
+    "orderSelected" : "Commander l'Article Sélectionné",
+    "deleteSelected" : "Supprimer l'Article Sélectionné",
+
+    "ok" : "OK",
+    "check" : "Vérifier",
+    "change" : "Changer",
+    "cancel" : "Annuler",
+    "edit" : "Modifier",
+    "delete" : "Supprimer",
+    "search" : "Chercher",
+    "proceedOrder" : "Commander",
+    "create" : "Créer",
+    "save" : "Sauvegarder",
+    "continue" : "Continuez",
+
+    "fromDate" : "Date Début Sélection",
+    "toDate" : "Date Fin Sélection",
+    
+    "productName" : "Nom de Produit",
+    "productEdp" : "Code Produit",
+    "productSize" : "Taille",
+    "productPrice" : "Tarif U.",
+    "productNetPrice" : "Prix U.",
+    "productStock" : "Stock",
+    "productPack" : "Cdtnmt",
+
+    "orderNo" : "Numéro de Commande",
+    "orderDate" : "Date de Commande",
+    "subtotalQty" : "Quantité",
+    "subtotalPrice" : "Montant Total",
+    "orderStatus" : "Etat de la Commande",
+    "orderRemark" : "Remarque",
+    "sapOrderNo" : "SAP Order no.",
+
+    "itemNo" : "ITEM NO.",
+    "totalPrice" : "Montant Total",
+    "totalQty" : "Quantité Totale",
+    "shipmentPrice" : "SHIPMENT PRICE",
+    "shipmentQty" : "SHIPMENT QTY",
+
+    "userName" : "ID",
+    "userPassword" : "Password",
+    "userConfirm" : "Confirm password",
+    "userAuthority" : "Autorisation",
+    "userLang" : "Langue",
+    "userCompany" : "Société",
+    "userPlant" : "Siège",
+    "userNo" : "Numéro Client",
+
+    "currentPw" : "Mot de Passe Actuel",
+    "newPw" : "Nouveau Mot de Passe",
+    "confirmNewPw" : "Confirmer Mot de Passe",
+
+    "cartQty" : "Quantité dans le Panier",
+    "qty" : "Quantité",
+    "quickOrder" : "Commande Express",
+
+    "requiredMsg" : "Information Requise.",
+    "cofirmMsg" : "Confirmer Mot de Passe.",
+    "matchMsg" : "Mot de Passe Incorrect.",
+    "charMsg" : "Le Mot de Passe doit contenir 6 caractères.",
+    "duplicateMsg" : "Compte déjà créé. Veuillez vérifier Identifiant et Mot de passe.",   
+
+    "bulkOrderMsg" : "Le format de Commande est xlsx.",
+    "bulkOrderMsg2" : "Télécharger le formulaire de commande sous Excel.",
+
+    "verifyMsg" : "Pour continuer, veuillez vous identifier",
+    "editCartMsg" : "Modifier la quantité dans le panier ?",
+    "orderMsg" : "Commander la quantité sélectionnée ?",
+    "ordersMsg" : "Produit Sélectionné-Commander les Produits Sélectionnés ?",
+    "deleteItemMsgC" : "Supprimer du panier ?",
+    "deleteItemsMsgC" : "Articles Sélectionnés- Supprimer du Panier ?",
+    "addFavoriteMsg" : "Ajouter aux Favoris ?",
+    "deleteItemMsgF" : "Supprimer des Favoris ?",
+    "newShipToMsg" : "La nouvelle adresse de livraison sera traitée après confirmation au bureau.",
+
+    "errLoginMsg" : "Echec Commande",
+    "errLoginMsg2" : "Identifiant ou Mot de Passe Incorrect.",
+    "errRegisterMsg" : "Enregistrement échoué.",
+    "errAddCart" : "Echec Ajout au Panier.",
+    "errAddFavorites" : "Echec ajout aux Favoris",
+   
+    "errCheckOut" : "Eche de commande",
+    "errCallCart" : "Echec Consultation du Panier",
+    "errCallFavorites" : "Echec consultation Liste des Favoris",
+
+    "errReadfile" : "Erreur Survenue lors du chargement de Fichier!",
+    "errXlsx" : "Merci d'Importer un fichier valide en format .xlsx.",
+    "errMissing" : "Quantité manquante pour *temp",
+    "errNotExist" : "Le code produit *temp n'existe pas",
+
+    "emptyCart" : "Panier Vide.",
+    "emptyFavorites" : "Pas de Favoris.",
+    "zeroQty" : "Sélectionner une Quantité",
+    "lowItemCnt" : "La quantité de *temp n'est pas conforme au conditionnement minimum.\nVeuillez ajuster la quantité commandée",
+    "multiItemCnt" : "La quantité de *temp doit être multiple du conditionnement minimum.\nVeuillez ajuster la quantité commandée",
+    "notMatchItem" : "La quantité commandée doit être multiple du conditionnement minimum. La quantité de commande est automatiquement augmentée en fonction du conditionnement. :\n*temp",
+    "zeroItem" : "Sélectionner un article",
+    
+    "createMsg" : "Le Compte a été créé avec Succès",
+    "blankMsg" : "Merci de Renseigner les Champs.",
+    "changePwMsg" :	"Le Mot de Passe a été Modifié avec Succès.",
+    "changeLaMsg" : "La Langue a été modifiée avec Succès.",
+    "deleteUserMsg" : "Account has been deleted successfully",
+    "notAvailableMsg" : "Not available, Please contact office.",
+
+    "masterOrderMsg" : "Master cannot be order.",
+    "ponumMsg"	: "Veuillez indiquer une Référence Commande..",
+    "userSelectMsg"	: "Merci de Sélectionner un Numéro de Client.",
+    "shipSelectMsg" : "Merci de Sélectionner un Adresse de Livraison.",
+    "orederSuccessMsg"	: "La Commande a été générée normalement.",
+    "orderCheckMsg" : "Veuillez vérifier la liste des produits du client.",
+
+    "noItemMsg" : "Panier Vide.",
+
+    "noOrdesMsg" : "Pas d'Historique de Commandes.",
+    
+    "minFiveMsg" : "Doit Contenir au moins 5 caractères.",
+    "askMasterMsg" :"Merci de Contacter l'Administrateur.",
+    "serverErrorMsg" : "Déconnecté du Serveur - Essayer de Nouveau.",
+
+    "accountManagement" : "Gérer mes comptes",
+    "changeLanguage" : "Choix de Langue",
+    "orderWhole" : "Commander Panier Complet",
+    "deleteWhole" : "Supprimer Panier",
+
+    "shipCity" : "Ville",
+    "shipPost" : "Code Postal",
+    "shipTel" : "Téléphone",
+
+    "username" : "Nom",
+    "userCity" : "Ville",
+    "userAddr" : "Adresse",
+    "userPost" : "Code Postal",
+    "userTel" : "Téléphone",
+    "userDc" : "Canal de Distribution",
+
+    "myProfile" : "Mon Profil",
+
+    "confirmY" : "Traitée dans ERP : oui",
+    "confirmN" : "Traitée dans ERP : non",
+    "cancleY" : "Annulée dans ERP",
+    "cancleN" : "Annuler : non",
+
+    "deliveryType" : "Transporteur",
+
+    "ponumber" : "Référence Commande",
+
+    "downloadForm" : "Download orderform",
+
+    "findshipName" : "Search to destination",
+    "findshipPost" : "Search to postal code",
+    "option" : "Option",
+
+    "domestic" : "Domestic",
+    "export" : "Export",
+    "versionUp" : "Le serveur a été mis à jour. Veuillez vous connecter.",
+    "orderinfomsg" : "Les frais de port ne sont pas inclus.",
+    
+    "telnum" : "Numéro de téléphone",
+    "contactname" : "Nom de contact",
+    "email" : "Adresse mail",
+
+    "telnumRequiredMsg" : "Numéro de téléphone information Requise.",
+    "contactnameRequiredMsg" : "Nom de contact information Requise.",
+    "emailRequiredMsg" : "Adresse mail information Requise." 
+    
+}

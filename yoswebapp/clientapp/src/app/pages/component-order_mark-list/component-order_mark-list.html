@@ -1,0 +1,64 @@
+<mat-card class="sample-view" *ngFor="let DATA of OrderList">
+    <div class="sample-toggle">
+        <button mat-icon-button (click)="openDeleteDialog(DATA.edp,DATA)" onclick="this.blur()">
+            <mat-icon class="icon_btn">star</mat-icon>
+        </button>
+    </div>
+    <div class="sample-view-out">
+        <div class="sample-view-out-items">
+            <p><b>{{'productName' | translate }}</b> <br> {{DATA.product}}</p>
+        </div>
+        <div class="sample-view-out-items">
+            <p><b>{{'productEdp' | translate }}</b> <br> {{DATA.edp}}</p>
+        </div>
+        <div class="sample-view-out-items">
+            <p><b>{{'productSize' | translate }}</b> <br> {{DATA.standard}}</p>
+        </div>
+        <!-- <div class="sample-view-out-items">
+            <p><b>{{'productPrice' | translate }}</b> <br> {{DATA.price | currency : DATA.currency}}</p>
+        </div>
+
+         <div class="sample-view-out-items">
+            <p><b>{{'productNetPrice' | translate }}</b>
+                <br>
+                <b style="font-weight: normal;" [ngStyle]="{'color' : DATA.netprice == 0.0? 'black' : DATA.netprice == DATA.price ? 'black' : 'red'}">
+                    {{ DATA.netprice | currency : DATA.currency}}                
+                    </b>    
+        </div> -->
+
+       <!-- <p><b>{{'productPrice' | translate }}</b> <br> {{DATA.price | currency : 'KRW':'symbol-narrow'}}</p> -->
+        <div class="sample-view-out-items">
+            <p>
+                <b>{{'productNetPrice' | translate }}</b>      
+                <br>
+                {{ DATA.netprice | currency : DATA.currency}}
+            </p>               
+        </div>
+        
+        <div class="sample-view-out-items">
+            <p><b>{{'productPack' | translate }}</b> <br> {{DATA.packing}}</p>
+        </div>
+        <div class="sample-view-out-items">
+            <p>
+                <b>{{'productStock' | translate }}</b> 
+                <br><b class="subtitle">{{getVKeyTitle(DATA.vkey)}}</b>
+                <br>{{getStock(DATA)}}
+            </p>
+        </div>
+    </div>
+    <div class="sample-button">
+        <div>
+            <button id="btnRaiseCnt" class="sample-button-cart" mat-raised-button (click)="openCartDialog(DATA.edp,DATA.cart,DATA)"
+                onclick="this.blur()"  >
+                {{'cartQty' | translate }} <b>({{DATA.cart}})</b>
+            </button>
+        </div>
+        <div>
+            <!-- [ngStyle]="fitBtnWidth()" -->
+            <button  class="sample-button-order" mat-raised-button
+                (click)="openOrderDialog(DATA.product,DATA.edp,DATA.price,DATA)" onclick="this.blur()">
+                {{'quickOrder' | translate }}
+            </button>
+        </div>
+    </div>
+</mat-card>

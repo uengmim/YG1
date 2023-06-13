@@ -1,0 +1,47 @@
+.docs-component-viewer-nav{
+      position: sticky;
+      margin-right: 8%;
+      margin-left: 6%;
+      top: 30px;
+      right: 0;
+      z-index: 2;
+
+      margin-top: 20px;
+      width: 230px;
+      text-align: right;
+    //   margin-right: 6%;
+    //   margin-left: 2%;
+    }
+
+.ng-star-inserted {
+      text-align: center;
+}
+
+
+.menu {
+    width: 220px;
+      list-style: none;
+      background-color: #fff;
+      border: 1px solid #d1d5da;
+      border-radius: 3px;
+  }
+
+  .menu-item {
+      position: relative;
+      display: block;
+      padding: 8px 10px;
+      border-bottom: 1px solid #e1e4e8;
+  }
+
+  a {
+      text-align: center;
+      text-decoration: none;
+  }
+  
+  .pr-4 {
+      text-align: center;
+  }
+  .col-3 {
+      
+      width: 100%;
+  }

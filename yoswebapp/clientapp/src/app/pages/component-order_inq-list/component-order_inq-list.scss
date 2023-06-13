@@ -1,0 +1,152 @@
+@import "../../../styles/constants";
+
+.docs-component-viewer-nav-content {
+  // position: sticky;
+  // top: 50px;
+  // bottom: 20px;
+  margin:1.2%;
+  z-index: 5;
+  background-color: white;
+
+  .mat-form-field {
+    display: inline-block;
+    position: relative;
+    text-align: left;
+  }
+}
+
+
+.fitTable{
+  max-height: 63vh;
+  overflow: auto;  
+}
+
+.fitTable::-webkit-scrollbar {
+  height: 4px;
+  width: 4px;
+}
+.fitTable::-webkit-scrollbar-thumb {
+  background-color: rgba(0,0,0,.26)
+}
+
+
+
+@media (max-width: 500px ) {    
+.docs-component-viewer-nav-content 
+{
+  .mat-form-field {
+    display: flex;
+ 
+  
+}}
+
+}
+
+
+table {
+  text-align: center !important;
+  width: 100% !important;
+}
+
+th.mat-header-cell {
+  width: 5%;
+  text-align: center;
+}
+
+.datePicker {
+  width: 20%;
+  margin-right: 30px;
+}
+
+.filter {
+  width: 70%;
+}
+
+::ng-deep .mat-header-cell .mat-sort-header-container {
+  justify-content: center;
+  color: black;
+}
+
+// td.mat-cell, td.mat-footer-cell, th.mat-header-cell {
+//   word-break: break-all;
+//   max-width: 500px;
+// }
+
+.mat-header-cell:nth-child(2),.mat-cell:nth-child(2){
+  max-width: 130px;
+}
+.mat-header-cell:nth-child(3),.mat-cell:nth-child(3){
+  max-width: 100px;
+}
+.mat-header-cell:nth-child(4),.mat-cell:nth-child(4){
+  max-width: 160px;
+}
+.mat-header-cell:nth-child(5),.mat-cell:nth-child(5){
+  max-width: 130px;
+}
+.mat-header-cell:nth-child(6),.mat-cell:nth-child(6){
+  max-width: 130px;
+}
+.mat-header-cell:nth-child(7),.mat-cell:nth-child(7){
+  max-width: 100px;
+}
+.mat-header-cell:nth-child(8),.mat-cell:nth-child(8){
+  max-width: 100px;
+}
+.mat-header-cell:nth-child(9),.mat-cell:nth-child(9){
+  max-width: 500px;
+}
+
+td.mat-cell:last-of-type,
+td.mat-footer-cell:last-of-type,
+th.mat-header-cell:last-of-type {
+  word-break: break-all;
+  padding-left: 0px;
+  padding-right: 0px;
+  max-width: 500px;
+}
+td.mat-cell:first-of-type,
+td.mat-footer-cell:first-of-type,
+th.mat-header-cell:first-of-type {
+  padding-left: 0px;
+  padding-right: 0px;
+  max-width: 100px;
+}
+
+
+tr.example-detail-row {
+  height: 0;
+}
+
+tr.example-element-row:not(.example-expanded-row):hover {
+  background: #f5f5f5;
+}
+
+tr.example-element-row:not(.example-expanded-row):active {
+  background: #efefef;
+}
+
+.example-element-row td {
+  border-bottom-width: 0;
+}
+
+
+table.sub_table {
+  margin: auto;
+  width: 60%;
+}
+
+.example-element-detail {
+  overflow: hidden;
+}
+
+
+
+@media (max-width: $small-breakpoint-width) {
+  .datePicker {
+    width: 50%;
+    margin-right: 30px;
+  }
+
+}
+

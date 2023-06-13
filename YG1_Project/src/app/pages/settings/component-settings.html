@@ -1,0 +1,17 @@
+<div class="container">
+    <form>
+        <div>
+            {{'verifyMsg' | translate:param }}
+        </div>
+        <mat-form-field class="example-full-width">
+            <input matInput placeholder="{{ 'userPassword' | translate:param }}" type="password" [formControl]="passwordFormControl"
+                [errorStateMatcher]="matcher" name="userpassword"  [(ngModel)]="password">
+            <mat-error *ngIf="passwordFormControl.hasError('required')">
+                UserPassword is <strong>required</strong>
+            </mat-error>
+        </mat-form-field>
+    </form>
+    <button mat-button color="primary" (click)=submit() class="btn btn-success">
+        {{'submit' | translate:param }}
+    </button>
+</div>

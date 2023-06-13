@@ -1,0 +1,205 @@
+
+app-root {
+  display: -webkit-flex;
+  display: flex;
+  flex-direction: column;
+  position: absolute;
+  top: 50px;
+  bottom: 0;
+  left: 0;
+  right: 0;
+   
+}
+  
+// 오더 리스트 지지직 거리는 현상 수정
+@media (max-width: 1380px) {
+.mat-drawer-content{
+  //overlay 는 웹에서만 돌아간다
+  overflow : overlay !important; 
+ }
+}
+
+  app-navbar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 50;
+    background: white;
+  }
+ 
+ 
+  app-root > app-component-sidenav {
+    flex: 1;
+    top: 50px;
+    overflow: hidden;
+   
+    @media (max-width: 1380px) {
+      overflow: hidden;
+
+      }
+
+    }
+
+    app-component-nav {
+    padding-top: 8px;
+    width: auto;
+    min-width: 250px;
+    margin-left: 2%;
+
+
+           
+    }
+
+   
+    
+    app-component-nav-right {
+      margin-right: 3%;
+      margin-left: 1%; 
+
+    }
+
+
+    app-component-order_mark-list,
+    app-component-cart-list,
+    app-component-product-list{
+      margin-top: 20px;
+      margin-left: 10px;
+      width: 70%;
+      min-width: 850px;
+      z-index: 2;
+      background: whitesmoke;
+      border-radius: 18px;
+      height: fit-content;
+      padding: 10px;      
+
+      // 앱화면
+      @media (max-width: 768px) {
+
+      height: auto;
+      padding : 16px;
+      align-self: center;
+      
+      }
+
+      @media (max-width: 1380px){
+        padding:0;
+      }
+    }
+
+
+    app-component-register, 
+    app-component-order,   
+    app-component-modify,
+    app-component-modify-pw,
+    app-component-account-management{
+      margin-top: 20px;
+      margin-left: 10px;
+      width: 70%;
+      min-width: 850px;
+      z-index: 2;
+      background-color: transparent;
+      border-radius: 18px;
+      height: fit-content;    
+    }
+
+    app-component-settings,
+    app-component-bulkorder{
+      margin: 10vh auto 0 auto;
+      width: 70%;
+      min-width: 850px;
+      z-index: 2;
+      background-color: transparent;
+      border-radius: 18px;
+      height: fit-content;   
+    }
+
+  app-component-order_inq-list {
+    width: 72%; // 화면 흔들려 보이는 문제 조정
+    margin-top: 10px;
+    margin-left: 10px;
+    z-index: 2;
+  }
+
+  // app-component-order_mark-list {
+  //   margin-top: 10px;
+  //   width: 80%;
+  // }
+  // app-component-order {
+  //   margin-top: 10px;
+  //   width: 80%;
+  // }
+  // app-component-cart-list {
+  //   margin-top: 10px;
+  //   width: 80%;
+  // }
+  // app-component-register {
+  //   margin-top: 10px;
+  //   width: 80%;
+  // }
+  
+  
+  
+  @media (max-width: 1380px) {
+    
+    app-root {
+      top: 92px;
+    }
+
+    app-navbar {
+      margin-left: 0;
+      margin-right: 0;
+    }
+    component-page-header {
+      margin-left: 0;
+      margin-right: 0;
+    }
+    app-component-order{
+      width: auto;
+      margin-left: 10px;
+      margin-right: 10px;
+      min-width: auto;
+    }
+    
+
+    app-component-product-list, 
+    app-component-order_mark-list, 
+    app-component-cart-list, 
+    app-component-register, 
+    app-component-modify,
+    app-component-modify-pw
+    {
+      margin-top: 20px;
+      margin-left: 0px;
+      margin-right: 0px;
+      width: 100%;
+      min-width: 100%;
+    }
+
+    app-component-settings,
+    app-component-bulkorder{
+      margin: 10vh auto 0 auto;
+      width: 100%;
+            min-width: 100%;  
+    }
+
+    app-component-order_inq-list {
+      width: 100%;
+      min-width: 1024px;
+      z-index: 2;
+    }
+    // app-component-order_mark-list {
+    //   width: 100%;
+    // }
+    // app-component-order {
+    //   width: 100%;
+    // }
+    // app-component-cart-list {
+    //   width: 100%;
+    // }
+    // app-component-register {
+    //   width: 100%;
+    // }
+
+    
+  }

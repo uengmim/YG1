@@ -1,0 +1,60 @@
+<br>
+<mat-chip-list class="sample-chip" aria-label="Fish selection">
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<p> 검색 목록 :</p>
+    <mat-chip>엔드밀</mat-chip>
+    <mat-chip>4G MILL</mat-chip>
+    <mat-chip color="primary" selected>2날 봉</mat-chip>
+</mat-chip-list>
+
+
+
+<mat-card class="sample-view" *ngFor="let DATA of DATA" [ngSwitch]='DATA.ordermark'>
+
+    <div class="sample-toggle" *ngSwitchCase="'1'">
+        <button mat-icon-button (click)="openOrderMarkDialog(DATA,DATA.ordermark)">
+            <mat-icon color="primary">star</mat-icon>
+        </button>
+    </div>
+    <div class="sample-toggle" *ngSwitchCase="'0'">
+        <button mat-icon-button (click)="openOrderMarkDialog(DATA,DATA.ordermark)">
+            <mat-icon color="primary">star_border</mat-icon>
+        </button>
+    </div>
+
+    <div class="sample-view-out">
+        <div class="sample-view-out-items">
+            <p>{{DATA.product}}</p>
+        </div>
+        <div class="sample-view-out-items">
+            <p>{{DATA.edp}}</p>
+        </div>
+        <div class="sample-view-out-items">
+            <p>{{DATA.standard}}</p>
+        </div>
+        <div class="sample-view-out-items">
+            <p>{{DATA.price | currency : 'KRW':'symbol-narrow'}}</p>
+        </div>
+        <div class="sample-view-out-items">
+            <p>{{DATA.stock}}</p>
+        </div>
+        <div class="sample-view-out-items">
+            <p>{{DATA.packing}}</p>
+        </div>
+    </div>
+    <div class="sample-button">
+        <div>
+            <button class="sample-button-cart" mat-raised-button (click)="openCartDialog(DATA.edp,DATA.cart,DATA)">
+                {{'cartQty' | translate:param }} ({{DATA.cart}})
+            </button>
+        </div>
+        <div>
+            <button class="sample-button-order" mat-raised-button
+                (click)="openOrderDialog(DATA.product,DATA.edp,DATA.price,DATA.cart)">
+                {{'quickOrder' | translate:param }}
+            </button>
+        </div>
+    </div>
+
+
+
+</mat-card>

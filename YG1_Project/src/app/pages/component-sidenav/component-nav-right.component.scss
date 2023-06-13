@@ -1,0 +1,27 @@
+.docs-component-viewer-nav{
+      position: sticky;
+      margin-right: 8%;
+      top: 70px;
+      left: 1800px;
+      right: 0;
+      z-index: 2;
+    }
+
+.ng-star-inserted {
+      text-align: center;
+}
+
+::ng-deep .mat-form-field-label {
+    /*change color of label*/
+    color: gray !important;
+   }
+  
+   ::ng-deep.mat-form-field-underline {
+    /*change color of underline*/
+    background-color: gray !important;
+  } 
+  
+  ::ng-deep.mat-form-field-ripple {
+   /*change color of underline when focused*/
+   background-color: darkblue !important;;
+  }

@@ -1,0 +1,94 @@
+<div class="container">
+    <div class="Subhead">
+        <h2 class="Subhead-heading">{{'accountManagement' | translate }}</h2>
+    </div>  
+
+    <div class="fitTable">
+    <table mat-table [dataSource]="datasource" style="width: 100%;" matSort matSortActive="usrno"
+    matSortDirection="desc"> 
+     
+        <ng-container matColumnDef="usrno">
+            <th mat-header-cell *matHeaderCellDef mat-sort-header > {{'userNo' | translate }}</th>
+            <td mat-cell *matCellDef="let element; ">  
+            {{element.usrno}}
+            </td>
+        </ng-container>
+    
+        <ng-container matColumnDef="usrpl" >
+            <th mat-header-cell *matHeaderCellDef > {{'userPlant' | translate }} </th>
+            <td mat-cell *matCellDef="let element"> {{element.usrpl}} </td>          
+        </ng-container>
+    
+        <ng-container matColumnDef="usrid">
+            <th mat-header-cell *matHeaderCellDef> {{'userName' | translate }} </th>
+            <td mat-cell *matCellDef="let element"> {{element.usrid }} </td>     
+        </ng-container>
+    
+        <ng-container matColumnDef="usrnm">
+            <th mat-header-cell *matHeaderCellDef> {{'username' | translate }} </th>
+            <td mat-cell *matCellDef="let element"> {{element.usrnm}} </td>   
+        </ng-container>  
+
+        <ng-container matColumnDef="usrla">
+            <th mat-header-cell *matHeaderCellDef> {{'userLang' | translate }} </th>
+            <td mat-cell *matCellDef="let element">   
+                {{setCurrentLang(element.usrla)}}     
+            </td>   
+        </ng-container>
+        <ng-container matColumnDef="isChangeLa">
+            <th mat-header-cell *matHeaderCellDef> {{'changeLanguage' | translate }} </th>
+            <td mat-cell *matCellDef="let element; let i = index">
+                <button mat-button color="accent" [matMenuTriggerFor]="menu">
+                    {{'changeLanguage' | translate }}
+                </button>
+            <mat-menu #menu="matMenu">
+                <button mat-menu-item *ngFor="let lang of languageList" (click)="Switchlang(lang.code,i)">
+                    <span
+                        data-bind="attr: {'class': flag, 'flag-name': flag},css:{'currency-flag':true}"
+                        class="flag-icon-{{lang.code}} currency-flag" [ngStyle]="{'background-image': lang.image}">
+                    </span>
+                    <span class="currency-label" data-bind="text: label" >{{lang.name}}</span>
+                </button>
+            </mat-menu>            
+            </td>   
+        </ng-container>
+
+        <ng-container matColumnDef="isChangePw">
+            <th mat-header-cell *matHeaderCellDef> {{'changePassword' | translate }} </th>
+            <td mat-cell *matCellDef="let element; let i = index">      
+            <button mat-button  color="warn" (click)="onChangePw(element,i)">
+                {{'changePassword' | translate }}
+            </button>
+            </td>        
+        </ng-container>
+
+        <ng-container matColumnDef="isCanSave">
+            <th mat-header-cell *matHeaderCellDef> {{'save' | translate }} </th>
+            <td mat-cell *matCellDef="let element; let i = index">      
+            <button mat-flat-button color="primary" [disabled]="element.isCanSave" (click)="onSave(i)">
+                {{'save' | translate }}
+             </button>
+            </td>        
+        </ng-container>
+        <ng-container matColumnDef="isDelete">
+            <th mat-header-cell *matHeaderCellDef> {{'delete' | translate }} </th>
+            <td mat-cell *matCellDef="let element; let i = index">      
+            <button mat-flat-button color="primary"  (click)="onDeleteUser(i)">
+                {{'delete' | translate }}
+             </button>
+            </td>        
+        </ng-container>
+
+
+     <tr mat-header-row *matHeaderRowDef="displayedColumns;  sticky: true" style="text-align-last:center; font-size: 15px; font-weight: bold;"></tr>
+     <tr mat-row *matRowDef="let row; columns: displayedColumns;"  ></tr>
+
+    </table>
+    </div>
+   
+        <mat-paginator [pageSizeOptions] = "[10, 20, 50]"  showFirstLastButtons> </mat-paginator > 
+
+
+
+    
+</div>

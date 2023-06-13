@@ -1,0 +1,63 @@
+<div class="container">
+    <form [formGroup]="formGroup">
+        <mat-form-field class="example-full-width">
+            <input matInput placeholder="{{'userName' | translate:param }}" formControlName="username" [errorStateMatcher]="matcher"
+                name="username">
+            <mat-error *ngIf="username.hasError('required')">
+                Username is <strong>required</strong>
+            </mat-error>
+        </mat-form-field>
+        <br>
+        <mat-form-field>
+            <input matInput type="password" placeholder="{{'userPassword' | translate:param }}" formControlName="password"
+                (input)="onPasswordInput()">
+            <mat-error *ngIf="password.hasError('required')">Password is required</mat-error>
+            <mat-error *ngIf="password.hasError('minlength')">Password must have at least {{minPw}} characters
+            </mat-error>
+        </mat-form-field>
+        <br>
+        <mat-form-field>
+            <input matInput type="password" placeholder="{{'userConfirm' | translate:param }}" formControlName="password2"
+                (input)="onPasswordInput()">
+            <mat-error *ngIf="password2.hasError('required')">Please confirm your password</mat-error>
+            <mat-error *ngIf="password2.invalid && !password2.hasError('required')">Passwords don't match</mat-error>
+        </mat-form-field>
+        <br>
+        <mat-form-field>
+            <mat-select placeholder="{{'userAuthority' | translate:param }}">
+                <mat-option value="option">Manager</mat-option>
+                <mat-option value="option">Customer</mat-option>
+            </mat-select>
+        </mat-form-field>
+        <br>
+        <mat-form-field>
+            <mat-select placeholder="{{'userLang' | translate:param }}">
+                <mat-option value="option"><img src="assets/img/yg-1_intro_eng.png">English</mat-option>
+                <mat-option value="option"><img src="assets/img/yg-1_intro_kor.png">한국어</mat-option>
+                <mat-option value="option"><img src="assets/img/yg-1_intro_fra.png">Français</mat-option>
+                <mat-option value="option"><img src="assets/img/yg-1_intro_ger.png">Deutsch</mat-option>
+            </mat-select>
+        </mat-form-field>
+        <br>
+        <mat-form-field>
+            <mat-select placeholder="{{'userCompany' | translate:param }}">
+                <mat-option value="option">Company1</mat-option>
+                <mat-option value="option">Company2</mat-option>
+            </mat-select>
+        </mat-form-field>
+        <br>
+        <mat-form-field>
+            <mat-select placeholder="{{'userPlant' | translate:param }}">
+                <mat-option value="option">Plant1</mat-option>
+                <mat-option value="option">Plant2</mat-option>
+            </mat-select>
+        </mat-form-field>
+        <br>
+        <mat-form-field>
+            <input matInput placeholder="{{'userNo' | translate:param }}">
+        </mat-form-field>
+    </form>
+    <button mat-button color="primary" (click)=signUp() class="btn btn-success">
+        {{'submit' | translate:param }}
+    </button>
+</div>

@@ -1,0 +1,36 @@
+@import '../../../styles/constants';
+
+table {
+    text-align: center !important;
+    width: 100%;
+  }
+  
+  
+  th.mat-header-cell {
+    text-align: center;
+}
+
+  .mat-form-field{
+    width: 50%;
+  }
+
+  ::ng-deep .mat-header-cell .mat-sort-header-container {
+    justify-content: center;
+    color: black;
+}
+
+  td.mat-cell:last-of-type, td.mat-footer-cell:last-of-type, th.mat-header-cell:last-of-type {
+    padding-left: 0px;
+    padding-right: 0px;
+  }
+  td.mat-cell:first-of-type, td.mat-footer-cell:first-of-type, th.mat-header-cell:first-of-type {
+    padding-left: 0px;
+    padding-right: 0px;
+  }
+
+
+tr.mat-footer-row {
+    font-weight: bold;
+  }
+
+

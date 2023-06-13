@@ -1,0 +1,17 @@
+<div class="container">
+    <div class="modify-column"><b>{{'userNo' | translate:param }}</b></div><br>
+    <div class="modify-column"><b>{{'userName' | translate:param }}</b> : {{getUser()}}</div>
+    <form>
+        <mat-form-field>
+            <mat-select placeholder="{{ 'userLang' | translate:param }}">
+                <mat-option value="option"><img src="assets/img/yg-1_intro_eng.png">English</mat-option>
+                <mat-option value="option"><img src="assets/img/yg-1_intro_kor.png">한국어</mat-option>
+                <mat-option value="option"><img src="assets/img/yg-1_intro_fra.png">Français</mat-option>
+                <mat-option value="option"><img src="assets/img/yg-1_intro_ger.png">Deutsch</mat-option>
+            </mat-select>
+        </mat-form-field>
+    </form>
+    <button mat-button color="primary" (click)=signUp() class="btn btn-success">
+        {{'edit' | translate:param }}
+    </button>
+</div>

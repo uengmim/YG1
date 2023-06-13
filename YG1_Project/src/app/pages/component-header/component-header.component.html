@@ -1,0 +1,9 @@
+<div class="docs-primary-header component-page-header">
+  <button mat-button class="sidenav-toggle" (click)="toggleSidenav.emit()">
+    <mat-icon>menu</mat-icon>
+  </button> 
+  <h1 focusOnNavigation>{{getTitle() | translate:param }} </h1>
+  <button mat-button class="sidenav-toggle2"  (click)="toggleSidenavright.emit()">
+    <mat-icon>search</mat-icon>
+  </button>
+</div>

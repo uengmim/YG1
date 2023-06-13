@@ -1,0 +1,25 @@
+<div [ngSwitch]='data.OrderMark'>
+    <div *ngSwitchCase="'1'">
+        <div mat-dialog-content>
+            <p> {{'deleteItemMsgF' | translate }} </p>
+        </div>
+        <div mat-dialog-actions >
+            <button mat-button (click)="onOrderMarkDelete(data.OrderMarkList,data.OrderMark)" 
+                [disabled]=clickCheck>{{'delete' | translate }}</button>
+            <button mat-button (click)="onCancel()"> {{'cancel' | translate }} </button>
+            <!-- cdkFocusInitial 옵션을 넣으면 포커스가 들어감 -->
+        </div>
+    </div>
+    <div *ngSwitchCase="'0'">
+        <div mat-dialog-content>
+            <p> {{'addFavoriteMsg' | translate }} </p>
+        </div>
+        <div mat-dialog-actions>
+            <button mat-button (click)="onOrderMarkInsert(data.OrderMarkList,data.OrderMark)"
+                [disabled]=clickCheck>{{'ok' | translate }}</button>
+            <button mat-button (click)="onCancel()"> {{'cancel' | translate }} </button>
+            <!-- cdkFocusInitial 옵션을 넣으면 포커스가 들어감 -->
+        </div>
+    </div>
+
+</div>

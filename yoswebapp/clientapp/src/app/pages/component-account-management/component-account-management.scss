@@ -1,0 +1,100 @@
+@import "../../../styles/constants";
+
+.content {
+    display: flex;
+    text-align: center;
+    justify-content: center;
+    min-width: 400px;
+  }
+  .actiondig {
+    text-align: center;
+  }
+
+ 
+  .mat-column-usrno{ width:10%;}
+  .mat-column-usrpl{ width:10%;}
+  .mat-column-usrid{ width:10%;}
+  .mat-column-usrnm{ width:10%;}
+  .mat-column-usrla{ width:10%;}
+  .mat-column-isChangeLa{ width:5%;}
+  .mat-column-isChangePw{ width:5%;}
+  .mat-column-isCanSave{ width:5%;}
+  .mat-column-isDelete{ width:5%;}
+  .currency-flag {
+    width: 23px;
+    height: 23px;
+    border-radius: 100%;
+    border: 1px solid #fff;
+    background-size: cover;
+    background-position: 50%;
+    background-repeat: no-repeat;
+    position: relative;
+    float: left;
+    line-height: 1em;
+    color: #000;
+}
+
+.fitTable{
+    max-height: 63vh;
+    overflow: auto;
+    
+}
+
+
+::ng-deep .mat-header-cell .mat-sort-header-container {
+    justify-content: center;
+    color: black;
+  }
+
+  .mat-header-cell {
+    font-size: 15px;
+    font-weight: bold;
+}
+
+.currency-label {
+    margin-top: 6px;
+    margin-left: 13px;
+    margin-right: 10px;
+    float: left;
+    line-height: 15px;
+    text-transform: capitalize;
+    color: #000;
+    font-size: 17px;
+    letter-spacing: .6px;
+}
+
+
+.container {
+    margin-left: 10%;
+    text-align: center;
+}
+.Subhead {
+    display: flex;
+    padding-bottom: 8px;
+    margin-bottom: 16px;
+    border-bottom: 1px solid #e1e4e8;
+    flex-flow: row wrap;
+}
+.Subhead-heading {
+    font-size: 24px;
+    font-weight: 400;
+}
+.modify-column {
+    text-align: center;
+}
+.mat-form-field {
+    width: 70%;
+}
+
+
+
+.mat-table {
+    overflow: auto;
+    max-height: 500px;
+  }
+
+@media (max-width: 1380px) {
+    .container{
+        margin-left: 0
+    }
+}

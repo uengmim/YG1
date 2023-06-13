@@ -1,0 +1,57 @@
+<div class="container">
+    <div *ngIf="authority === 'CUSTOMER'">
+        <div class="Subhead">
+            <h2 class="Subhead-heading">{{'myProfile' | translate }}</h2>
+        </div>
+        <div class="Userinfo">
+            <div class="modify-column"><b>{{'userName' | translate }}</b> : {{usrid}}</div>
+            <div class="modify-column"><b>{{'userNo' | translate }}</b> : {{cust}}</div>
+            <div class="modify-column"><b>{{'username' | translate }}</b> : {{custnm}}</div>
+            <div class="modify-column"><b>{{'userCity' | translate }}</b> : {{city}}</div>
+            <div class="modify-column"><b>{{'userAddr' | translate }}</b> : {{addr}}</div>
+            <div class="modify-column"><b>{{'userPost' | translate }}</b> : {{post}}</div>
+            <div class="modify-column"><b>{{'userTel' | translate }}</b> : {{tel}}</div>
+            <div class="modify-column"><b>{{'userDc' | translate }}</b> : {{dcname}}</div>
+        </div>
+    </div>
+
+    <div class="Subhead">
+        <h2 class="Subhead-heading">{{'changePassword' | translate }} </h2>
+    </div>
+    <form [formGroup]="formGroup">
+        <mat-form-field>
+            <input matInput type="password" placeholder="{{'newPw' | translate }}" formControlName="password"
+                (input)="onPasswordInput()">
+            <mat-error *ngIf="password.hasError('required')">{{'userPassword' | translate }} {{'requiredMsg' | translate }}</mat-error>
+            <mat-error *ngIf="password.hasError('minlength')">{{'charMsg' | translate }}
+            </mat-error>
+        </mat-form-field>
+        <br>
+        <mat-form-field>
+            <input matInput type="password" placeholder="{{'userConfirm' | translate }}" formControlName="password2"
+                (input)="onPasswordInput()" (keyup.enter)=changePw()>
+            <mat-error *ngIf="password2.hasError('required')">{{'cofirmMsg' | translate }}</mat-error>
+            <mat-error *ngIf="password2.invalid && !password2.hasError('required')">{{'matchMsg' | translate }}</mat-error>
+        </mat-form-field>
+    </form>
+    <button mat-button (click)=changePw() class="btn btn-success">
+        {{'change' | translate }}
+    </button>
+
+    <div class="Subhead">
+        <h2 class="Subhead-heading">{{'changeLanguage' | translate }}</h2>
+    </div>
+    <form [formGroup]="formGroup">
+        <mat-form-field>
+            <mat-select placeholder="{{'userLang' | translate }}" formControlName="language">
+                <mat-option *ngFor="let lang of languageList" value={{lang.code}}><span
+                        data-bind="attr: {'class': flag, 'flag-name': flag},css:{'currency-flag':true}"
+                        class="flag-icon-{{lang.code}} currency-flag" [ngStyle]="{'background-image': lang.image}"></span>
+                    <span class="currency-label" data-bind="text: label">{{lang.name}}</span></mat-option>
+            </mat-select>
+        </mat-form-field>
+    </form>
+    <button mat-button (click)=changeLa() class="btn btn-success">
+        {{'change' | translate }}
+    </button>
+</div>

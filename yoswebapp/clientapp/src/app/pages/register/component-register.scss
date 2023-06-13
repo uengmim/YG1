@@ -1,0 +1,121 @@
+.container {
+    margin-left: 10%;
+    text-align: center;
+}
+
+.Subhead {
+    display: flex;
+    padding-bottom: 8px;
+    margin-bottom: 16px;
+    border-bottom: 1px solid #e1e4e8;
+    flex-flow: row wrap;
+}
+.Subhead-heading {
+    font-size: 24px;
+    font-weight: 400;
+}
+
+.mat-form-field {
+    width: 70%;
+}
+
+::ng-deep .mat-select-trigger {
+   max-height: 400px;
+}
+  
+  
+::ng-deep .mat-select-panel {
+    max-height: 400px !important;
+}
+  
+.radio_btn {
+    text-align: center;
+    background-color: white;
+    width: 100%;
+    height: 100%;
+    z-index: 100;
+}
+
+.mat-radio-button {
+    margin-right: 5%;
+}
+
+.select_filter {
+        position: -webkit-sticky;
+        position: sticky;
+        top: 0;
+        z-index: 100;
+        
+        ::ng-deep .mat-progress-spinner {
+            margin: 0;
+            width: 25px !important;
+            height: 25px !important;
+        }
+        ::ng-deep .mat-progress-spinner svg {
+            width: 25px !important;
+            height: 25px !important;
+        }
+}
+
+.currency-flag {
+    width: 23px;
+    height: 23px;
+    border-radius: 100%;
+    border: 1px solid #fff;
+    background-size: cover;
+    background-position: 50%;
+    background-repeat: no-repeat;
+    position: relative;
+    float: left;
+    line-height: 1em;
+    color: #000;
+}
+
+.currency-label {
+    margin-top: 6px;
+    margin-left: 13px;
+    margin-right: 10px;
+    float: left;
+    line-height: 15px;
+    text-transform: capitalize;
+    color: #000;
+    font-size: 17px;
+    letter-spacing: .6px;
+}
+
+// .flag-icon-en {
+//     background-image: url(/assets/img/yg-1_intro_eng.png);
+// }
+
+// .flag-icon-ko {
+//     background-image: url(/assets/img/yg-1_intro_kor.png);
+// }
+
+// .flag-icon-fr {
+//     background-image: url(/assets/img/yg-1_intro_fra.png);
+// }
+
+// .flag-icon-de {
+//     background-image: url(/assets/img/yg-1_intro_ger.png);
+// }
+
+@media (max-width: 1380px) {
+    .container{
+        margin-left: 0
+    }
+
+    .mat-option {
+        font-size: 13px;
+    }
+    
+    ::ng-deep .mat-select-trigger {
+       max-height: 400px;
+       font-size: 13px;
+    }
+      
+      
+    ::ng-deep .mat-select-panel {
+        max-height: 400px !important;
+        font-size: 13px;
+    }
+}

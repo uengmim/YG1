@@ -1,0 +1,10 @@
+<div>
+    <div mat-dialog-content>
+        <p>{{'deleteItemMsgC' | translate }}</p>
+    </div>
+    <div mat-dialog-actions>
+        <button mat-button (click)="onDeleteCart(data.CartList)" [disabled] = clickCheck> {{'delete' | translate }} </button>
+        <button mat-button (click)="onDialogCancel()"> {{'cancel' | translate }} </button>
+        <!-- cdkFocusInitial 옵션을 넣으면 포커스가 들어감 -->
+    </div>
+</div>

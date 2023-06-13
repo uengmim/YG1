@@ -1,0 +1,146 @@
+
+
+    <mat-form-field class="remark-form">
+        <input matInput type="text" [(ngModel)]="remark" placeholder="{{'requirements' | translate }}">
+    </mat-form-field>
+    
+    <!-- <mat-form-field class="deliveryType-form">
+        <input matInput type="text" maxlength="35" [(ngModel)]="deliveryType" placeholder="{{'deliveryType' | translate }}">
+    </mat-form-field> -->
+    
+    
+    <mat-form-field class="deliveryType-form"  *ngIf="isDTypeFieldVisible()">
+        <mat-label>{{'deliveryType' | translate }}</mat-label>
+        <mat-select [(ngModel)]="deliveryType" name="type">
+            <option value="" selected></option>
+          <mat-option *ngFor="let type of dTypes" [value]="type.display">
+            {{type.display}}
+          </mat-option>
+        </mat-select>
+    </mat-form-field>
+    
+    
+    <mat-form-field class="ponumber-form">
+        <input matInput type="text" maxlength="35" [(ngModel)]="ponumber" placeholder="{{'ponumber' | translate }}">
+    </mat-form-field>
+    
+    
+    <br>
+    <div [ngSwitch]='authority' class="Cutomer-container">
+        <div *ngSwitchCase="'MANAGER'" class = "Coutomer-container-content">
+            <form [formGroup]="formGroup">
+            <div >
+                <mat-form-field>
+                    <mat-select placeholder="{{'option' | translate }}" formControlName="option" (selectionChange)="CustomerItems($event.value)">
+                        <mat-option value="10">{{'domestic' | translate}}</mat-option>
+                        <mat-option value="20">{{'export'|translate}}</mat-option>
+                    </mat-select>
+                </mat-form-field>
+            </div>
+            <div >
+                <mat-form-field class="Customer-form">
+                    <mat-select formControlName="customerValue" placeholder="{{'username' | translate }}" [disableOptionCentering]="true" [(ngModel)]="customerNo">
+                        <mat-select-filter [array]="filterList" placeholder="Customer Search" [displayMember]="'custnm'"
+                            (filteredReturn)="filteredList =$event">
+                        </mat-select-filter>
+                        <mat-option class="Customer-form-name-Option" *ngFor="let customerList of filteredList"
+                            [(value)]="customerList.cust">
+                            {{customerList.cust}} - {{customerList.custnm}}
+                        </mat-option>
+                    </mat-select>
+                </mat-form-field>
+            </div>
+        </form>
+        </div>
+        <div *ngSwitchCase="'MASTER'">
+            <mat-form-field class="Customer-form">
+                <mat-select placeholder="{{'userNo' | translate }}" [(ngModel)]="customerNo" [disabled]="true">
+                    <mat-option *ngFor="let customerList of filteredList" [value]="customerList.cust">
+                    </mat-option>
+                </mat-select>
+            </mat-form-field>
+        </div>
+        <div *ngSwitchCase="'CUSTOMER'">
+            <mat-form-field class="Customer-form">
+                <mat-select placeholder="{{'userNo' | translate }}" [(ngModel)]="customerNo" [disabled]="true">
+                    <mat-option value={{customer}} selected> {{customer}}
+                    </mat-option>
+                </mat-select>
+            </mat-form-field>
+        </div>
+    <div class="Btn-address">
+        <button mat-button  [disabled]=addressClick
+            (click)="openDestinationDialog(customerNo)">{{'addressManagement' | translate }}</button>
+        </div>
+    </div>
+    
+  
+    <p style="margin:0" >   <!-- *ngIf="DestinationValue" --> <b>{{'shipAddress' | translate }}</b> = {{DestinationValue?.addr}} //
+        <b>{{'shipName' | translate }}</b> = {{DestinationValue?.stpnm}} //
+        <b>{{'shipPost' | translate }}</b> = {{DestinationValue?.post}} // <b>{{'shipTel' | translate }}</b> =
+        {{DestinationValue?.tel}}</p>
+    <table mat-table [dataSource]="dataSource">
+        <!-- Checkbox Column -->
+        <ng-container matColumnDef="select">
+            <th mat-header-cell *matHeaderCellDef>
+                <mat-checkbox (change)="$event ? masterToggle() : null" [checked]="selection.hasValue() && isAllSelected()"
+                    [indeterminate]="selection.hasValue() && !isAllSelected()">
+                </mat-checkbox>
+            </th>
+            <td mat-cell *matCellDef="let row">
+                <mat-checkbox (click)="$event.stopPropagation()" (change)="$event ? selection.toggle(row) : null"
+                    [checked]="selection.isSelected(row)">
+                </mat-checkbox>
+            </td>
+            <td mat-footer-cell *matFooterCellDef></td>
+        </ng-container>
+    
+        <ng-container matColumnDef="edpNo">
+            <th mat-header-cell *matHeaderCellDef> {{'productEdp' | translate }}</th>
+            <td mat-cell *matCellDef="let element"> {{element.edp}} </td>
+            <td mat-footer-cell *matFooterCellDef>Total</td>
+        </ng-container>
+    
+        <ng-container matColumnDef="name">
+            <th mat-header-cell *matHeaderCellDef> {{'productName' | translate }} </th>
+            <td mat-cell *matCellDef="let element"> {{element.product}} </td>
+            <td mat-footer-cell *matFooterCellDef></td>
+        </ng-container>
+    
+        <!-- <ng-container matColumnDef="price">
+            <th mat-header-cell *matHeaderCellDef> {{'productPrice' | translate }} </th>
+            <td mat-cell *matCellDef="let element"> {{element.price | currency : element.currency }} </td>
+            <td mat-footer-cell *matFooterCellDef></td>
+        </ng-container> -->
+
+        <ng-container matColumnDef="netprice">
+            <th mat-header-cell *matHeaderCellDef> {{'productNetPrice' | translate }} </th>
+            <td mat-cell *matCellDef="let element"> {{element.netprice | currency : element.currency }} </td>
+            <td mat-footer-cell *matFooterCellDef></td>
+        </ng-container>
+    
+        <ng-container matColumnDef="orderEa">
+            <th mat-header-cell *matHeaderCellDef> {{'qty' | translate }} </th>
+            <td mat-cell *matCellDef="let element"> {{element.cart}} </td>
+            <td mat-footer-cell *matFooterCellDef></td>
+        </ng-container>
+    
+        <ng-container matColumnDef="sum">
+            <th mat-header-cell *matHeaderCellDef> {{'totalPrice' | translate }} </th>
+            <td mat-cell *matCellDef="let element">
+                {{element.netprice * element.cart | currency : element.currency }}</td>
+            <td mat-footer-cell *matFooterCellDef>{{getTotalSum() | currency : getTotalCurr()}}</td>
+        </ng-container>
+    
+        <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+        <tr mat-row *matRowDef="let row; columns: displayedColumns;" (click)="selection.toggle(row)"></tr>
+        <tr mat-footer-row *matFooterRowDef="displayedColumns"></tr>
+    </table>
+    
+    <button mat-button color="primary"
+    (click)="onOrder(selection.selected,remark,deliveryType,ponumber,customerNo,DestinationValue)">{{'proceedOrder' | translate }}</button>
+    <button mat-button color="primary" (click)="removeSelectedRows()">{{'deleteSelected' | translate }}</button>
+    <button mat-button color="primary" (click)="backPage()">{{'cancel' | translate }}</button>
+    <b *ngIf="company == '4100'" style="float:right ; padding-top: 5px;" >{{'orderinfomsg' | translate }}</b>
+    
+    

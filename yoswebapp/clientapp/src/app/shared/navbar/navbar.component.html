@@ -1,0 +1,36 @@
+<nav class="docs-navbar-header">
+  <a class="docs-button" routerLink="/product" aria-label="Angular Material">
+    <img class="docs-yg1-logo" src="assets/img/yg-1_intro_logo2.png">
+  </a>
+  <div class="navbar-title">
+    <b>{{ 'mainTitle' | translate }}</b>
+  </div>
+  <div class="flex-spacer"></div>
+
+  <div *ngIf="loginService.isUserLoggedIn()">
+    <a mat-button class="docs-navbar-hide-small docs-button" *ngFor="let section of sections"
+      routerLink="/{{section.key}}">
+      {{section.name | translate }}<mat-icon class="badge-icon" *ngIf="section.name === 'cart'"
+        matBadgePosition="above after " matBadge={{carts}} matBadgeOverlap="false" matBadgeColor="accent"
+        matBadgeSize="small"></mat-icon>
+    </a>
+    <a mat-button *ngIf="authority === 'MANAGER'" class="docs-navbar-hide-small docs-button" (click)="onChangeCustomer()">{{'proxyOrder' | translate }}</a>
+  </div>
+
+  <div *ngIf="loginService.isUserLoggedIn()">
+    <product-searcher></product-searcher>
+    <menu-picker></menu-picker>
+  </div>
+  <language-picker></language-picker>
+</nav>
+
+<nav class="docs-navbar docs-navbar-show-small">
+  <div class="docs-navbar  docs-navbar-show-small2" *ngIf="loginService.isUserLoggedIn()">
+    <a mat-button class="docs-navbar-link" *ngFor="let section of sections"
+      routerLink="/{{section.key}}">{{section.name | translate }}
+      <mat-icon   class="badge-icon"
+        *ngIf="section.name === 'cart'" matBadgePosition="above after " matBadge={{carts}} matBadgeOverlap="false"
+        matBadgeColor="accent" matBadgeSize="small"></mat-icon></a>
+        <a mat-button *ngIf="authority === 'MANAGER'" class="docs-navbar-link" (click)="onChangeCustomer()">{{'proxyOrder' | translate }}</a>
+  </div>
+</nav>

@@ -1,0 +1,42 @@
+
+.currency-flag {
+    width: 23px;
+    height: 23px;
+    border-radius: 100%;
+    border: 1px solid #fff;
+    background-size: cover;
+    background-position: 50%;
+    background-repeat: no-repeat;
+    position: relative;
+    float: left;
+    line-height: 1em;
+    color: #000;
+}
+
+.currency-label {
+    margin-top: 6px;
+    margin-left: 13px;
+    margin-right: 10px;
+    float: left;
+    line-height: 15px;
+    text-transform: capitalize;
+    color: #000;
+    font-size: 17px;
+    letter-spacing: .6px;
+}
+
+// .flag-icon-en {
+//     background-image: url(/assets/img/yg-1_intro_en.png);
+// }
+
+// .flag-icon-ko {
+//     background-image: url(/assets/img/yg-1_intro_ko.png);
+// }
+
+// .flag-icon-fr {
+//     background-image: url(/assets/img/yg-1_intro_fr.png);
+// }
+
+// .flag-icon-de {
+//     background-image: url(/assets/img/yg-1_intro_ge.png);
+// }

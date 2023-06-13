@@ -1,0 +1,87 @@
+<div class="fab-container">
+    <button mat-fab class="fab-toggler" (click)="onToggleFab()">
+        <i class="material-icons" [@fabToggler]="{value:fabTogglerState}">add</i>
+    </button>
+    <!-- 버튼 클릭 이벤트 진행  -->
+    <div [@speedDialStagger]="buttons.length">
+        <!-- mini fab 버튼류 -->
+        <!-- <button *ngFor="let btn of buttons" mat-mini-fab class="fab-secondary" color="secondary">
+            <i class="material-icons">{{btn.icon}}</i>
+        </button> -->
+        <button *ngFor="let btn of buttons" mat-raised-button class="fab-secondary"
+            (click)="FabEnvet(btn.key,selection.selected)">
+            <i>{{btn.value | translate}}</i>
+        </button>
+    </div>
+</div>
+<div id="fab-dismiss" *ngIf="fabTogglerState==='active'" (click)="onToggleFab()">
+</div>
+
+<div class="web_container">
+    <button class="web_btn" mat-raised-button *ngFor="let btn of fabButtonList" (click)="FabEnvet(btn.key,selection.selected)">{{btn.value | translate}}</button>
+</div>
+
+
+
+<mat-card class="sample-view" *ngFor="let Cart of CartItems">
+
+    <div class="sample-toggle">
+        <mat-checkbox [color]="color" (click)="$event.stopPropagation()"
+            (change)="$event ? selection.toggle(Cart) : null" [checked]="selection.isSelected(Cart)"></mat-checkbox>
+    </div>
+    <div class="sample-view-out">
+        <div class="sample-view-out-items">
+            <p><b>{{'productName' | translate }}</b> <br> {{Cart.product}}</p>
+        </div>
+        <div class="sample-view-out-items">
+            <p><b>{{'productEdp' | translate }}</b> <br> {{Cart.edp}}</p>
+        </div>
+        <div class="sample-view-out-items">
+            <p><b>{{'productSize' | translate }}</b> <br> {{Cart.standard}}</p>
+        </div>
+
+        <!-- 요청에의한 listprice 제거 -->
+        <!-- <div class="sample-view-out-items">
+            <p><b>{{'productPrice' | translate }}</b> <br> {{Cart.price | currency : Cart.currency}}</p>
+        </div> -->
+
+        <div class="sample-view-out-items">
+            <p>
+                <b>{{'productNetPrice' | translate }}</b> 
+                 <br>             
+                {{ Cart.netprice | currency : Cart.currency}}
+            </p>
+        </div>
+
+
+
+        <div class="sample-view-out-items">
+            <p><b>{{'productPack' | translate }}</b> <br> {{Cart.packing}}</p>
+        </div>
+       
+        <div class="sample-view-out-items">
+            <p>
+                <b>{{'productStock' | translate }}</b> 
+                <br><b class="subtitle">{{getVKeyTitle(Cart.vkey)}}</b>
+                <br>{{getStock(Cart)}}
+            </p>
+         </div>
+
+
+    </div>
+    <div class="sample-button" >
+        <div>
+            <button class="sample-button-cart"  mat-raised-button (click)="openDialog(Cart.edp,Cart.cart,Cart)"
+                onclick="this.blur()" >
+                {{'qty' | translate }} <b>({{Cart.cart}})</b>
+            </button>
+        </div>
+
+    </div>
+    <div  class="cart-delete">
+        <button  mat-button (click)="openDeleteDialog(Cart)" onclick="this.blur()">
+            <mat-icon>clear</mat-icon>
+        </button>
+
+    </div>
+</mat-card>

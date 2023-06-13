@@ -1,0 +1,14 @@
+[
+    {
+        "companyId":"4200",
+        "desc" :"YG1독일",
+        "erpClass":"com.yg1.yoswebapp.sapA1.SapA1DE",
+        "erpProfile":"YG1DE"
+    },
+    {
+        "companyId":"4100",
+        "desc" :"YG1프랑스",
+        "erpClass":"com.yg1.yoswebapp.sapA1.SapA1FR",
+        "erpProfile":"YG1FR"
+    }
+]

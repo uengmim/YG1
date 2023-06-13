@@ -1,0 +1,20 @@
+<div>
+    <div mat-dialog-content>
+        <p> {{'editCartMsg' | translate }} </p>
+        <mat-form-field>
+            <input type="number" matInput [(ngModel)]="data.ItemsCART" min="1" max = "9999" oninput="validity.valid||(value='1')"
+                onfocus="this.select()" (keyup.enter)="onAddCart(data.ItemsCART,data.ItemsEDP,data.ItemsLIST)">
+        </mat-form-field>
+    </div>
+    <div mat-dialog-actions>
+        <button mat-button (click)="onAddCart(data.ItemsCART,data.ItemsEDP,data.ItemsLIST)" [disabled]=cartClick>
+            {{'edit' | translate }} </button>
+        <button mat-button (click)="onCartDelete(data.ItemsLIST)"
+            [disabled]=cartClick>{{'delete' | translate }}</button>
+        <button mat-button (click)="onCancel()"> {{'cancel' | translate }} </button>
+
+        <!-- cdkFocusInitial 옵션을 넣으면 포커스가 들어감 -->
+
+    </div>
+
+</div>

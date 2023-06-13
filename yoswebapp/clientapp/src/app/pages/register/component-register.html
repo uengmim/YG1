@@ -1,0 +1,98 @@
+<div class="container">
+    <div class="Subhead">
+        <h2 class="Subhead-heading">{{'createAccount' | translate }}</h2>
+    </div>
+    <form [formGroup]="formGroup">
+        <mat-form-field class="example-full-width">
+            <input matInput placeholder="{{'userName' | translate }}" formControlName="userid"
+                [errorStateMatcher]="matcher" name="userid" (focusout)="focusOutID()">
+            <mat-error *ngIf="userid.hasError('required')">
+                {{'userName' | translate }} {{'requiredMsg' | translate }}
+            </mat-error>
+        </mat-form-field>
+        <br>
+
+        <mat-form-field >
+            <input matInput placeholder="{{'username' | translate }}" formControlName="username"
+                [errorStateMatcher]="matcher" name="username" (focusout)="focusOutName()">
+            <mat-error *ngIf="username.hasError('required')">
+                {{'username' | translate }} {{'requiredMsg' | translate }}
+            </mat-error>
+        </mat-form-field>
+        <br>
+        <mat-form-field>
+            <input matInput type="password" placeholder="{{'userPassword' | translate }}" formControlName="password"
+                (input)="onPasswordInput()">
+
+                
+            <mat-error *ngIf="password.hasError('required')">{{'userPassword' | translate }} {{'requiredMsg' | translate }}</mat-error>
+            <mat-error *ngIf="password.hasError('minlength')">{{'charMsg' | translate }}
+            </mat-error>
+        </mat-form-field>
+        <br>
+        <mat-form-field>
+            <input matInput type="password" placeholder="{{'userConfirm' | translate }}" formControlName="password2"
+                (input)="onPasswordInput()">
+            <mat-error *ngIf="password2.hasError('required')">{{'cofirmMsg' | translate }}</mat-error>
+            <mat-error *ngIf="password2.invalid && !password2.hasError('required')">{{'matchMsg' | translate }}</mat-error>
+        </mat-form-field>
+        <br>
+        <mat-form-field>
+            <mat-select placeholder="{{'userAuthority' | translate }}" formControlName="authority">
+                <mat-option *ngIf="auth === 'MASTER'" value="MASTER" (focusout)="focusOutAU('MASTER')">MASTER
+                </mat-option>
+                <mat-option *ngIf="auth === 'MASTER'" value="MANAGER" (focusout)="focusOutAU('MANAGER')">MANAGER
+                </mat-option>
+                <mat-option value="CUSTOMER" (focusout)="focusOutAU('CUSTOMER')">CUSTOMER</mat-option>
+            </mat-select>
+        </mat-form-field>
+        <br>
+        <mat-form-field>
+            <mat-select placeholder="{{'userLang' | translate }}" formControlName="language">
+                <mat-option *ngFor="let lang of languageList" value={{lang.code}}><span
+                        data-bind="attr: {'class': flag, 'flag-name': flag},css:{'currency-flag':true}"
+                        class="flag-icon-{{lang.code}} currency-flag" [ngStyle]="{'background-image': lang.image}"></span>
+                    <span class="currency-label" data-bind="text: label">{{lang.name}}</span></mat-option>
+            </mat-select>
+        </mat-form-field>
+        <br>
+        <mat-form-field *ngIf="auth === 'MASTER'">
+            <mat-select placeholder="{{'userCompany' | translate }}" formControlName="company">
+                <mat-option *ngFor="let companyList of companyList" value="{{companyList.comp}}"
+                    (focusout)="focusOutCO(companyList.comp)">
+                    {{companyList.compnm}}</mat-option>
+            </mat-select>
+        </mat-form-field>
+        <br>
+        <mat-form-field *ngIf="selectedAu === 'MANAGER' || selectedAu === 'CUSTOMER'">
+            <mat-select placeholder="{{'userPlant' | translate }}" formControlName="plant">
+                <mat-option *ngFor="let plantList of plantList" value="{{plantList.socode}}"
+                    (focusout)="focusOutPL(plantList.socode)">
+                    {{plantList.soname}}</mat-option>
+            </mat-select>
+        </mat-form-field>
+        <br>
+        <mat-form-field *ngIf="selectedAu === 'CUSTOMER'">
+            <mat-select placeholder="{{'userNo' | translate }}" formControlName="no">
+                <div class="select_filter">
+                    <div class="radio_btn">
+                    <mat-radio-group name="radio"  formControlName="radioGrop" (change)="radioChange($event)">
+                        <mat-radio-button value="all">{{'All' | translate }}</mat-radio-button>
+                        <mat-radio-button value="Domestic">{{'Domestic' | translate }}</mat-radio-button>
+                        <mat-radio-button value="Export">{{'Export' | translate }}</mat-radio-button>
+                      </mat-radio-group>
+                    </div>
+                <mat-select-filter [array]="customerList2" placeholder="Name Search" [displayMember]="'custnm'"
+                (filteredReturn)="filteredList =$event"></mat-select-filter>
+                <mat-select-filter [array]="customerList2" placeholder="Number Search" [displayMember]="'cust'"
+                    (filteredReturn)="filteredList =$event"></mat-select-filter>
+                </div>
+                <mat-option *ngFor="let customerList of filteredList" value="{{customerList.cust}},{{customerList.dccode}}">
+                    {{customerList.cust}} {{customerList.custnm}}</mat-option>
+            </mat-select>
+        </mat-form-field>
+    </form>
+    <button mat-button (click)=signUp() class="btn btn-success">
+        {{'create' | translate }}
+    </button>
+</div>

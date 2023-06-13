@@ -1,0 +1,9 @@
+<button mat-button [matMenuTriggerFor]="menu">
+      <mat-icon>language</mat-icon>
+</button>
+<mat-menu #menu="matMenu">
+      <button mat-menu-item (click)="Switchlang('en')"><img src="assets/img/yg-1_intro_eng.png">English</button>
+      <button mat-menu-item (click)="Switchlang('ko')"><img src="assets/img/yg-1_intro_kor.png">한국어</button>
+      <button mat-menu-item><img src="assets/img/yg-1_intro_fra.png">Français</button>
+      <button mat-menu-item><img src="assets/img/yg-1_intro_ger.png">Deutsch</button>
+</mat-menu>

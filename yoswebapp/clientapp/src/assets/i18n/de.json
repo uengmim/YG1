@@ -1,0 +1,200 @@
+{
+    "mainTitle" : "Online Bestellsystem",
+
+    "products" : "Produkte",
+    "orders" : "Bestellungen",
+    "cart" : "Warenkorb",
+    "favorites" : "Favoriten",
+    "bulkOrder" : "Großbestellung",
+    "proxyOrder" : "Account access",
+    "orderForm" : "Bestellformular erstellen",
+    "account" : "Konto bearbeiten",
+    "changePassword" : "Passwort ändern",
+    "editAccount" : "Konto bearbeiten",
+    "createAccount" : "Konto erstellen",
+    "proxyBuying" : "Durchgangserwerb / durch Agentur",
+
+    "manual" : "Anleitung",
+
+    "signIn" : "Anmelden",
+    "signOut" : "Abmelden",
+    "verify" : "Angemeldet als",
+
+    "globalFilter" : "Suche",
+    "requirements" : "Anforderungen",
+    "shipName" : "Versandname",
+    "shipAddress" : "Versandadresse",
+    "shipCode" : "Postleitzahl",
+    "addressManagement" : "Adressverwaltung",
+
+    "enterShipAddress" : "Neuer Versandname",
+    
+    "orderSelected" : "ausgewählte Artikel bestellen",
+    "deleteSelected" : "ausgewählte Artikel löschen",
+
+    "ok" : "OK",
+    "check" : "Prüfen",
+    "change" : "Ändern",
+    "cancel" : "Abbrechen",
+    "edit" : "Bearbeiten",
+    "delete" : "Löschen",
+    "search" : "Suchen",
+    "proceedOrder" : "Bestellen",
+    "create" : "Erstellen",
+    "save" : "Speichern",
+    "continue" : "Fortfahren",
+
+    "fromDate" : "von Datum",
+    "toDate" : "bis Datum",
+
+    "productName" : "Material Beschreibung",
+    "productEdp" : "EDP Nummer",
+    "productSize" : "Größe",
+    "productPrice" : "Listenpreis",
+    "productNetPrice" : "Netto Preis",
+    "productStock" : "Bestand",
+    "productPack" : "Verpackungseinheit",
+
+    "orderNo" : "Bestellnummer",
+    "orderDate" : "Bestelldatum",
+    "subtotalQty" : "Anzahl",
+    "subtotalPrice" : "Preis",
+    "orderStatus" : "Bestellstatus",
+    "orderRemark" : "Bemerkung",
+    "sapOrderNo" : "SAP Order no.",
+
+    "itemNo" : "Artikelnummer",
+    "totalPrice" : "Gesamtpreis",
+    "totalQty" : "Gesamtstückzahl",
+    "shipmentPrice" : "Versandkosten",
+    "shipmentQty" : "Versandstückzahl",
+
+    "userName" : "Benutzername",
+    "userPassword" : "Passwort",
+    "userConfirm" : "Passwort bestätigen",
+    "userAuthority" : "Ermächtigung",
+    "userLang" : "Sprache",
+    "userCompany" : "Firma",
+    "userPlant" : "Niederlassung",
+    "userNo" : "Besteller",
+
+    "currentPw" : "Aktuelles Passwort",
+    "newPw" : "Neues Passwort",
+    "confirmNewPw" : "Passwort erneut eingeben",
+
+    "cartQty" : "Warenkorb Stückzahl",
+    "qty" : "Stückzahl",
+    "quickOrder" : "Schnelle Bestellung ",
+
+    "requiredMsg" : "ist notwendig.",
+    "cofirmMsg" : "Bitte bestätigen Sie ihr Passwort.",
+    "matchMsg" : "Das Passwort stimmt nicht überein.",
+    "charMsg" : "Das Passwort muss aus mindestens 6 Zeichen bestehen.",
+    "duplicateMsg" : "Dieses Konto wird bereits verwendet. Bitte versuche Sie es erneut.",   
+
+    "bulkOrderMsg" : "Das Dateiformat des Bestellformulars lautet xlsx.",
+    "bulkOrderMsg2" : "Öffnen Sie die Datei nach dem Download des Bestellformulars mit EXCEL",
+
+    "verifyMsg" : "Um fortzufahren, bestätigen Sie ihre Anmeldung.",
+    "editCartMsg" : "Stückzahl des Warenkorbs bearbeiten??",
+    "orderMsg" : "Möchten Sie die aktuelle Stückzahl bestellen?",
+    "ordersMsg" : "Artikel ausgewählt. Ausgewählte Artikel bestellen?",
+    "deleteItemMsgC" : "Vom Warenkorb löschen?",
+    "deleteItemsMsgC" : "Artikel ausgewählt. Ausgewählte Artikel löschen?",
+    "addFavoriteMsg" : "Zu den Favoriten hinzufügen?",
+    "deleteItemMsgF" : "Von den Favoriten löschen?",
+    "newShipToMsg" : "Die neu eingegebene Lieferadresse wird nach einer internen Prüfung übernommen.",
+
+    "errLoginMsg" : "Ihre Anmeldung ist fehlgeschlagen.",
+    "errLoginMsg2" : "Falscher Benutzername oder Passwort.",
+    "errRegisterMsg" : "Registrierung ist fehlgeschlagen.",
+    "errAddCart" : "Fehler beim Hinzufügen zum Warenkorb.",
+    "errAddFavorites" : "Fehler beim Hinzufügen zu Favoriten.",
+   
+    "errCheckOut" : "Bestellung konnte nicht fotgesetzt werden.",
+    "errCallCart" : "Warenkorbliste konnte nicht angezeigt werden.",
+    "errCallFavorites" : "Favoritenliste konnte nicht angezeigt werden.",
+
+    "errReadfile" : "Beim Lesen der Datei ist ein Fehler aufgetreten!",
+    "errXlsx" : "Bitte importieren Sie eine gültige .xlsx Datei.",
+    "errMissing" : "Fehlende Menge für *temp",
+    "errNotExist" : "Produktreferenz *temp existiert nicht",
+
+    "emptyCart" : "Es befinden sich keine Artikel in Ihrem Warenkorb.",
+    "emptyFavorites" : "Es befinden sich keine Artikel in ihren Favoriten.",
+    "zeroQty" : "Bitte geben Sie eine Stückzahl ein, die größer als 0 ist.",
+    "lowItemCnt" : "Die bestellte Menge des *temp entspricht nicht der Mindestverpackungsmenge.\nBitte passen Sie die bestellte Menge an",
+    "multiItemCnt" : "Die bestellte Menge von *temp ist nicht mit der Verpackungsmenge kompatibel.\nBitte passen Sie die bestellte Menge an.",
+    "notMatchItem" : "Bitte ändern Sie die Bestellmenge nach der VPE :\n*temp",
+    "zeroItem" : "Bitte wählen Sie einen Artikel größer als 0 aus.",
+
+    "createMsg" : "Konto wurde erfolgreich erstellt.",
+    "blankMsg" : "Bitte füllen Sie alle Felder aus.",
+    "changePwMsg" :	"Passwort wurde erfolgreich geändert.",
+    "changeLaMsg" : "Die Sprache wurde erfolgreich geändert.",
+    "deleteUserMsg" : "Account has been deleted successfully",
+    "notAvailableMsg" : "Not available, Please contact office.",
+
+    "masterOrderMsg" : "Admin kann nicht bestellt werden.",
+    "ponumMsg"	: "Please select a Po Number.",
+    "userSelectMsg"	: "Bitte wählen Sie einen Kunden aus.",
+    "shipSelectMsg" : "Bitte wählen Sie eine Lieferadresse.",
+    "orederSuccessMsg"	: "Die Bestellung wurde erfolgreich bearbeitet.",
+    "orderCheckMsg" : "Please check the customer's product list.",
+
+    "noItemMsg" : "Es ist keine Bestellposition vorhanden.",
+
+    "noOrdesMsg" : "Es ist keine Bestellhistorie vorhanden.",
+    
+    "minFiveMsg" : "Es muss mindestens 5 Zeichen haben.",
+    "askMasterMsg" :"Bitte wenden Sie sich an den Administrator.",
+    "serverErrorMsg" : "Verbindung zum Server verloren. Bitte versuchen Sie es erneut.",
+
+    "accountManagement" : "Kontoverwaltung",
+    "changeLanguage" : "Sprache ändern",
+    "orderWhole" : "Alle Artikel bestellen",
+    "deleteWhole" : "Alle Artikel löschen",
+
+    "shipCity" : "Stadt",
+    "shipPost" : "Postleitzahl",
+    "shipTel" : "Telefon",
+
+    "username" : "Name",
+    "userCity" : "Stadt",
+    "userAddr" : "Adresse",
+    "userPost" : "Postleitzahl",
+    "userTel" : "Telefon",
+    "userDc" : "Distributionsroute",
+
+    "myProfile" : "Mein Profil",
+
+    "confirmY" : "In ERP fotfahren: Ja ",
+    "confirmN" : "In ERP fotfahren: Nein",
+    "cancleY" : "Abbrechen",
+    "cancleN" : "Warten Abbrechen",
+
+    "deliveryType" : "Versandart",
+    
+    "ponumber" : "Bestellnummer",
+
+    "downloadForm" : "Download Bestellformular",
+
+    "findshipName" : "Suche nach Lieferort",
+    "findshipPost" : "Suche nach Postleitzahl",
+    "option" : "Option",
+
+    "domestic" : "Inland",
+    "export" : "Export",
+    "versionUp" : "Der Server wurde aktualisiert. Bitte erneut anmelden.",
+    "orderinfomsg" : "The freight costs are not included.",
+    
+    "telnum" : "Telephone number",
+    "contactname" : "Contact name",
+    "email" : "Mail address",
+
+    "telnumRequiredMsg" : "Telephone number ist notwendig.",
+    "contactnameRequiredMsg" : "Contact name ist notwendig.",
+    "emailRequiredMsg" : "Mail address ist notwendig."
+
+
+}

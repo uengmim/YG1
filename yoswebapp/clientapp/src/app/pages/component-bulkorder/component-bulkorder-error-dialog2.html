@@ -1,0 +1,35 @@
+<div>
+    <div mat-dialog-content>
+         {{errorMsg}}
+        <table mat-table matTableExporter [dataSource]="dataSource" #exporter="matTableExporter" [hidden]="true">
+            <ng-container matColumnDef="EdpNo">
+                <th mat-header-cell *matHeaderCellDef mat-sort-header>{{'productEdp' | translate }}</th>
+                <td mat-cell *matCellDef="let element">
+                    {{element.edpNo}}
+                </td>
+            </ng-container>
+            <ng-container matColumnDef="PkUnit">
+                <th mat-header-cell *matHeaderCellDef mat-sort-header>{{'productPack' | translate }}</th>
+                <td mat-cell *matCellDef="let element">
+                    {{element.pkUnit}}
+                </td>
+            </ng-container>
+
+
+            <mat-header-row *matHeaderRowDef="displayedColumns"></mat-header-row>
+            <mat-row *matRowDef="let row; columns: displayedColumns;"></mat-row>
+        </table>
+    </div>
+    <div mat-dialog-actions>
+        <div style="display: flex; justify-content: center;"> 
+            <button mat-button color="warn"
+            (click)="excelDownload(exporter)">Excel Download </button>
+            <div style="align-self: center;" [hidden]="!isExcel">
+                <mat-spinner [diameter]="25" color="warn" [mode]="'indeterminate'">
+                </mat-spinner>
+            </div>
+        </div>
+        <button mat-button (click)="onDialogCancel()"> {{'cancel' | translate }} </button>
+        <button mat-button (click)="onDialogOk()"> {{'ok' | translate }} </button>
+    </div>
+</div>

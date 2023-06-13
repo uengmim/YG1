@@ -1,0 +1,9 @@
+csv<br>
+<input type="file" #csvReader name="Upload CSV" id="txtFileUpload" (change)="uploadListener($event)" accept=".csv" />
+<br>
+<button mat-button (click)="sendCSV(records)">submit</button>
+<br>
+xlsx<br>
+<input type="file" (change)="onFileChange($event)" multiple="false" />
+<br>
+<button mat-button (click)="sendXLSX(records2)">submit</button>

@@ -1,0 +1,125 @@
+<div class="destination-dialog">
+
+  <mat-radio-group aria-labelledby="destination-check" class="destination-check-group" [(ngModel)]="destination">
+    <h2 mat-dialog-title style="margin-bottom: 10px;" align="center">{{'addressManagement' | translate }}</h2>
+    <div class="SearchFormField" [ngSwitch]='OptionSelected'>
+      <mat-form-field class="select-search">
+        <mat-label>{{'option'| translate }}</mat-label>
+        <mat-select [(value)]="OptionSelected">
+          <mat-option value="stpnm">{{'shipName' | translate }}</mat-option>
+          <mat-option value="post">{{'shipPost' | translate }}</mat-option>
+        </mat-select>
+      </mat-form-field>
+      <mat-form-field class="destination-name-search" *ngSwitchCase="'stpnm'">
+        <mat-label></mat-label>
+        <input matInput type="text" [(ngModel)]="SearchDestinations">
+        <button mat-button *ngIf="SearchDestinations" matSuffix mat-icon-button aria-label="Clear"
+          (click)="Searchfix()">
+          <mat-icon>close</mat-icon>
+        </button>
+      </mat-form-field>
+      <mat-form-field class="destination-name-search" *ngSwitchCase="'post'">
+        <mat-label></mat-label>
+        <input matInput type="text" [(ngModel)]="SearchDestinations">
+        <button mat-button *ngIf="SearchDestinations" matSuffix mat-icon-button aria-label="Clear"
+          (click)="Searchfix()">
+          <mat-icon>close</mat-icon>
+        </button>
+      </mat-form-field>
+
+
+      <button mat-button (click)="Search(SearchDestinations,OptionSelected)">{{'search' | translate}}</button>
+    </div>
+
+    <mat-dialog-content class="destination-dialog-content">
+      <mat-card class="destination-card" *ngFor="let destinations of destinationList">
+        <div class="card-check">
+          <mat-radio-button class="destination-radio-button" [value]="destinations"> </mat-radio-button>
+        </div>
+        <div class="destination-card-list">
+          <div class="destination-card-list-items">
+            <p><b>{{'shipName' | translate }}</b> <br> {{destinations.stpnm}}</p>
+          </div>
+          <div class="destination-card-list-items">
+            <p><b>{{'shipPost' | translate }}</b> <br> {{destinations.post}}</p>
+          </div>
+          <div class="destination-card-list-items">
+            <p><b>{{'shipAddress' | translate }}</b> <br> {{destinations.addr}}</p>
+          </div>
+          <div class="destination-card-list-items">
+            <p><b>{{'shipCity' | translate }}</b> <br> {{destinations.city}}</p>
+          </div>
+        </div>
+      </mat-card>
+
+    </mat-dialog-content>
+    <p align="center" > {{'enterShipAddress' | translate }} </p>
+    <p align="center" style="margin-bottom: 0;"> {{'newShipToMsg' | translate }} </p>
+    <mat-dialog-content class="destination-dialog-content-2">
+      <div class="destination-add-check">
+
+        <mat-radio-button class="destination-radio-button" value="AddDestination"> </mat-radio-button>
+      </div>
+      <div class="destination-write">
+        <div class="destination-write-itmes">
+          <mat-form-field class="destination-write-name">
+            <input matInput placeholder="{{'shipName' | translate }}" type="text" [(ngModel)]="destinationName">
+          </mat-form-field>
+        </div>
+        <div class="destination-write-itmes">
+          <mat-form-field class="destination-write-code">
+            <input matInput placeholder="{{'shipPost' | translate }}" type="text" [(ngModel)]="destinationCode">
+          </mat-form-field>
+        </div>
+        <div class="destination-write-itmes">
+          <mat-form-field class="destination-write-city">
+            <input matInput placeholder="{{'shipCity' | translate }}" type="text" [(ngModel)]="destinationCity">
+          </mat-form-field>
+        </div>
+        <div class="destination-write-itmes">
+          <mat-form-field class="destination-write-street">
+            <input matInput placeholder="{{'shipAddress' | translate }}" type="text" [(ngModel)]="destinationStreet" maxlength="60">
+          </mat-form-field>
+        </div>
+
+
+        <div class="destination-write-itmes">
+          <mat-form-field class="destination-write-telnum">
+            <input matInput placeholder="{{'telnum' | translate }}" type="text" [(ngModel)]="destinationTelNum" maxlength="16" >
+            <!-- <mat-error >test</mat-error> -->
+          </mat-form-field>
+        </div>
+
+
+        <div class="destination-write-itmes">
+          <mat-form-field class="destination-write-email">
+            <input matInput placeholder="{{'email' | translate }}" type="text" [(ngModel)]="destinationEmail" maxlength="50" >
+            <!-- <mat-error >test</mat-error> -->
+          </mat-form-field>
+        </div>
+
+        <div class="destination-write-itmes">
+          <mat-form-field class="destination-write-contactname">
+            <input matInput placeholder="{{'contactname' | translate }}" type="text" [(ngModel)]="destinationContactName" maxlength="50"  >
+            <!-- <mat-error >test</mat-error> -->
+          </mat-form-field>
+        </div>
+
+        
+
+
+        
+     
+
+
+      </div>
+    </mat-dialog-content>
+
+
+    <mat-dialog-actions class="destination-button" align="center">
+      <button mat-button (click)="destinationSelect(destination, data.customerNo)">{{'ok' | translate }}</button>
+      <button mat-button (click)="onCancel()">{{'cancel' | translate }}</button>
+    </mat-dialog-actions>
+  </mat-radio-group>
+
+</div>

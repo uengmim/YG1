@@ -1,0 +1,102 @@
+@import '../../../styles/constants';
+
+$sidenav-width: 240px;
+
+app-component-sidenav {
+  display: -webkit-flex;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+
+
+}
+
+
+.docs-component-viewer-sidenav-container {
+  flex: 1;
+  box-sizing: border-box;
+  height: 100%;
+}
+
+.docs-component-viewer-sidenav {
+  overflow: auto;
+  
+}
+
+.mat-drawer-container {
+  background-color: white;
+}
+
+.docs-component-sidenav-inner-content {
+  display: -webkit-flex;
+  display: flex;
+  flex-direction: row;
+  position: relative;
+  top: 40px;
+
+  // // The rule will match the element following the router-outlet which will be the routed component.
+  // router-outlet + * {
+  //   flex-grow: 1;
+  // }
+}
+
+.mat-drawer {
+  &::-webkit-scrollbar {
+    height: 4px;
+    width: 4px;
+  }
+}
+
+
+.docs-component-sidenav-content {
+  display: flex;
+  display: -webkit-flex;
+  flex-direction: column;
+  height: 95%;
+
+
+}
+
+.docs-component-sidenav-inner-content {
+  display: -webkit-flex;
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+}
+
+.docs-component-sidenav-body-content {
+  display: -webkit-flex;
+  display: flex;
+  flex: 1 1 auto;
+}
+
+@media (max-width: $small-breakpoint-width) {
+  // Add specific rule to prevent default rule conflict
+  .docs-component-viewer-sidenav-container .docs-component-viewer-sidenav {
+    // position right above the content
+    z-index: 4;
+    min-width: 250px;
+    max-width: 80%;
+  }
+
+  .docs-component-viewer-nav {
+    position: relative;
+    top: 0;
+
+    .docs-component-viewer-nav-content {
+      box-sizing: border-box;
+      margin: 0;
+      max-height: initial;
+    }
+  }
+}
+
+@media (max-width: 1380px) {
+  .docs-component-viewer-sidenav-container {
+    flex: 1 0 auto;
+  }
+
+  .docs-component-sidenav-body-content {
+    flex-direction: column;
+  }
+}

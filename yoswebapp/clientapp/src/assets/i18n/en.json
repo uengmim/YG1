@@ -1,0 +1,202 @@
+{
+    "mainTitle" : "Online Ordering System",
+
+    "products" : "Products",
+    "orders" : "Orders",
+    "cart" : "Cart",
+    "favorites" : "Favorites",
+    "bulkOrder" : "Mass Order",
+    "proxyOrder" : "Account access",
+    "orderForm" : "Create Order Form",
+    "account" : "My Account",
+    "changePassword" : "Change Password",
+    "editAccount" : "Edit Account",
+    "createAccount" : "Create Account",
+    "proxyBuying" : "Proxy Buying",
+
+    "manual" : "User Manual",
+
+    "signIn" : "Sign in",
+    "signOut" : "Sign out",
+    "verify" : "Signed in as",
+
+    "globalFilter" : "Search",
+    "requirements" : "Remarks",
+    "shipName" : "Ship to name",
+    "shipAddress" : "Ship to address",
+    "shipCode" : "Ship to code",
+    "addressManagement" : "Ship-to address",
+
+    "enterShipAddress" : "New Ship-to address",
+    
+    "orderSelected" : "Order selected item(s)",
+    "deleteSelected" : "Delete selected  item(s)",
+
+    "ok" : "OK",
+    "check" : "Check",
+    "change" : "Change",
+    "cancel" : "Cancel",
+    "edit" : "Edit",
+    "delete" : "Delete",
+    "search" : "Search",
+    "proceedOrder" : "Order",
+    "create" : "Create",
+    "save" : "Save",
+    "continue" : "Continue",
+
+    "fromDate" : "From date",
+    "toDate" : "To date",
+
+    "productName" : "Description",
+    "productEdp" : "Material Code",
+    "productSize" : "Size",
+    "productPrice" : "Base Price",
+    "productNetPrice" : "Unit Price",
+    "productStock" : "Stock",
+    "productPack" : "PK Unit",
+
+    "orderNo" : "Order no.",
+    "orderDate" : "Order Date",
+    "subtotalQty" : "Qty",
+    "subtotalPrice" : "Amount",
+    "orderStatus" : "Order Status",
+    "orderRemark" : "Remark",
+    "sapOrderNo" : "SAP Order no.",
+
+    "itemNo" : "ITEM NO.",
+    "totalPrice" : "Total Amount",
+    "totalQty" : "Total Qty",
+    "shipmentPrice" : "SHIPMENT PRICE",
+    "shipmentQty" : "SHIPMENT QTY",
+
+    "userName" : "ID",
+    "userPassword" : "Password",
+    "userConfirm" : "Confirm password",
+    "userAuthority" : "Authority",
+    "userLang" : "Language",
+    "userCompany" : "Company",
+    "userPlant" : "Office",
+    "userNo" : "Customer",
+
+    "currentPw" : "Current password",
+    "newPw" : "New password",
+    "confirmNewPw" : "Re-enter password",
+
+    "cartQty" : "Cart Qty",
+    "qty" : "Qty",
+    "quickOrder" : "Quick Order",
+
+    "requiredMsg" : "is required.",
+    "cofirmMsg" : "Please confirm your password.",
+    "matchMsg" : "Passwords don't match.",
+    "charMsg" : "Password must have at least 6 characters.",
+    "duplicateMsg" : "This account is already in used. Please try again.",   
+
+    "bulkOrderMsg" : "The orderform's extension is xlsx.",
+    "bulkOrderMsg2" : "After download the orderform, write using EXCEL",
+
+    "verifyMsg" : "To continue, first verify it's you",
+    "editCartMsg" : "Edit the quantity of Cart?",
+    "orderMsg" : "Order the current quantity?",
+    "ordersMsg" : "item(s) selected. Order the selected item(s)?",
+    "deleteItemMsgC" : "Delete from the Cart?",
+    "deleteItemsMsgC" : "item(s) selected. Delete from the Cart?",
+    "addFavoriteMsg" : "Add to the Favorites?",
+    "deleteItemMsgF" : "Delete from the Favorites?",
+    "newShipToMsg" : "New ship-to address will be processed after confirmation at the office.",
+
+    "errLoginMsg" : "Fail to sign in",
+    "errLoginMsg2" : "Incorrect user ID or password.",
+    "errRegisterMsg" : "Registration failed.",
+    "errAddCart" : "Failed to add to the Cart.",
+    "errAddFavorites" : "Failed to add to the Favorites",
+   
+    "errCheckOut" : "Failed to proceed order",
+    "errCallCart" : "Failed to call the cart list",
+    "errCallFavorites" : "Failed to call the favorites list",
+
+    "errReadfile" : "Error is occured while reading file!",
+    "errXlsx" : "Please import valid .xlsx file.",
+    "errMissing" : "Missing quantity for *temp",
+    "errNotExist" : "Product reference *temp does not exist",
+
+    "emptyCart" : "There is no items in your shopping cart.",
+    "emptyFavorites" : "There is no items in your favorites.",
+    "zeroQty" : "Please enter a quantity greater than 0",
+    "lowItemCnt" : "The ordered quantity of *temp does not correspond to the minimum packaging quantity.\nPlease adjust the ordered quantity.",
+    "multiItemCnt" : "The ordered quantity of *temp must be multiple of the packaging quantity.\nPlease adjust the ordered quantity.",
+    "notMatchItem" : "Order quantity does not match with packing unit. The order quantity is automatically raised according to the packing unit. :\n*temp",
+    "zeroItem" : "Please select a item greater than 0",
+    
+    "createMsg" : "Account has been created successfully.",
+    "blankMsg" : "Please fill out the fields.",
+    "changePwMsg" :	"Password has been changed successfully.",
+    "changeLaMsg" : "Language has been changed successfully.",
+    "deleteUserMsg" : "Account has been deleted successfully",
+    "notAvailableMsg" : "Not available, Please contact office.",
+
+    "masterOrderMsg" : "Master cannot be order.",
+    "userSelectMsg"	: "Please select a your customer.",
+    "ponumMsg"	: "Please select a Po Number.",
+    "shipSelectMsg" : "Please select a shipping address.",
+    "orederSuccessMsg"	: "The oder has been processed successfully.",
+    "orderCheckMsg" : "Please check the customer's product list.",
+
+    "noItemMsg" : "There is no order item.",
+
+    "noOrdesMsg" : "There is no order history.",
+    
+    "minFiveMsg" : "It must have at least 5 characters.",
+    "askMasterMsg" :"Please contact the administrator.",
+    "serverErrorMsg" : "Disconnected from server. Please try again.",
+
+    "accountManagement" : "Account Management",
+    "changeLanguage" : "Change Language",
+    "orderWhole" : "Order all items",
+    "deleteWhole" : "Delete all items",
+
+    "shipCity" : "City",
+    "shipPost" : "Postal code",
+    "shipTel" : "Tel.",
+
+    "username" : "Name",
+    "userCity" : "City",
+    "userAddr" : "Address",
+    "userPost" : "Postal code",
+    "userTel" : "Tel.",
+    "userDc" : "Distribution route",
+
+    "myProfile" : "My Profile",
+
+    "confirmY" : "Processed In ERP : Yes",
+    "confirmN" : "Processed In ERP : No",
+    "cancleY" : "Canceled in ERP",
+    "cancleN" : "Cancel Waiting",
+
+    "deliveryType" : "Delivery Type",
+
+    "ponumber" : "Po Number",
+
+    "downloadForm" : "Download orderform",
+
+    "findshipName" : "Search to destination",
+    "findshipPost" : "Search to postal code",
+    "option" : "Option",
+
+    "domestic" : "Domestic",
+    "export" : "Export",
+    "versionUp" : "The server has been updated. Please sign in again.",
+    "orderinfomsg" : "The freight costs are not included.",
+
+    "telnum" : "Telephone number",
+    "contactname" : "Contact name",
+    "email" : "Mail address",
+
+    "telnumRequiredMsg" : "Telephone number is required.",
+    "contactnameRequiredMsg" : "Contact name is required.",
+    "emailRequiredMsg" : "Mail address is required."
+
+
+
+
+}

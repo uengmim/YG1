@@ -1,0 +1,130 @@
+
+app-root {
+  display: flex;
+  flex-direction: column;
+  position: absolute;
+  top: 50px;
+  bottom: 0;
+  left: 0;
+  right: 0;
+   
+}
+  
+  app-navbar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 50;
+    background: white;
+
+  }
+ 
+  app-root > app-component-sidenav {
+    flex: 1;
+    top: 50px;
+    overflow: hidden;
+   
+    @media (max-width: 768px) {
+      overflow: hidden;
+
+      }
+
+    }
+
+    app-component-nav {
+    width: 250px;
+    min-width: 250px;
+    margin-left: 10%;
+    }
+    
+    app-component-nav-right {
+      margin-top: 20px;
+      width: 250px;
+      text-align: right;
+      margin-right: 10%;
+      margin-left: 2%;
+    }
+
+  app-component-product-list, 
+  app-component-order_mark-list, 
+  app-component-order,
+  app-component-bulkorder, 
+  app-component-cart-list, 
+  app-component-register, 
+  app-component-settings,
+  app-component-modify {
+    margin-top: 10px;
+    width: 80%;
+    min-width: 1100px;
+  }
+  app-component-order_inq-list {
+    margin-top: 10px;
+    min-width: auto;
+    width: 80%;
+  }
+  // app-component-order_mark-list {
+  //   margin-top: 10px;
+  //   width: 80%;
+  // }
+  // app-component-order {
+  //   margin-top: 10px;
+  //   width: 80%;
+  // }
+  // app-component-cart-list {
+  //   margin-top: 10px;
+  //   width: 80%;
+  // }
+  // app-component-register {
+  //   margin-top: 10px;
+  //   width: 80%;
+  // }
+  
+  
+  
+  @media (max-width: 768px) {
+    
+    app-root {
+      top: 92px;
+    }
+
+    app-navbar {
+      margin-left: 0;
+      margin-right: 0;
+    }
+    component-page-header {
+      margin-left: 0;
+      margin-right: 0;
+    }
+    
+
+    app-component-product-list, 
+    app-component-order_inq-list, 
+    app-component-order_mark-list, 
+    app-component-order,
+    app-component-bulkorder, 
+    app-component-cart-list, 
+    app-component-register, 
+    app-component-settings,
+    app-component-modify {
+      width: 100%;
+      min-width: 100%;
+    }
+    // app-component-order_inq-list {
+    //   width: 100%;
+    // }
+    // app-component-order_mark-list {
+    //   width: 100%;
+    // }
+    // app-component-order {
+    //   width: 100%;
+    // }
+    // app-component-cart-list {
+    //   width: 100%;
+    // }
+    // app-component-register {
+    //   width: 100%;
+    // }
+
+    
+  }

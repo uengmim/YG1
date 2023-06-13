@@ -1,0 +1,385 @@
+@import '../../../styles/constants';
+
+
+
+
+// 웹화면
+@media (min-width: 769px) {
+
+  .mat-form-field {
+    display: flex;
+    text-align: center;
+    justify-content : center;
+  }
+  .mat-dialog-actions{
+    justify-content : center;
+    
+  }
+
+  .web_container{
+    position: sticky;
+    top: 50px;
+    z-index: 5;
+    background-color: whitesmoke;
+    .web_btn {
+      margin: 10px;
+    }
+  }
+
+//FAB 버튼 안 보임
+  //부모 FAB 버튼
+  .fab-container {
+    display: none;
+  
+    //자식 과 부모 사이의 마진값
+    > div {
+      display: none;
+  
+      //버튼 사이 마진
+      button {
+        display: none;
+      }
+    }
+  }
+  
+  .fab-toggler {
+    display: none;
+
+  }
+  #fab-dismiss {
+    display: none;
+  }
+
+  
+
+
+.sample-view{
+  display: flex;
+  max-width: 100%;
+  margin: 10px;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  justify-content: space-between;
+  align-items: stretch;
+  align-content: stretch;
+  text-align: center;
+
+
+
+  .subtitle{
+    color: dimgrey;
+    font-size: 14px;
+    font-weight: bold;
+  }
+  
+  .mat-raised-button{ 
+    padding :0 5px;
+    width: auto ;
+    min-width: 130px;
+  }  
+
+}
+.sample-button{
+  display: flex;
+  flex-basis: 15%;
+
+  align-items: center;
+  text-align: center;
+  margin-block-start: 1.0em;
+}
+.sample-button-cart{
+  width: 150px;
+}
+
+.case-discount{
+  text-decoration: line-through; 
+  font-size: 13px; 
+  font-weight: normal;
+}
+
+.cart-delete{
+  flex-basis: 5%;
+  right: 5px;
+  align-self: center; 
+ 
+}
+.sample-toggle{
+  flex-basis: 1%;
+  align-self: center; 
+}
+.sample-view-out{
+  display: flex;
+  flex-basis: 79%;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: stretch;
+  align-content: stretch;
+  margin-block-start: 1.5em;
+ 
+}
+
+
+.sample-view-out-items:nth-child(1) { flex: 2; }
+.sample-view-out-items:nth-child(2) { flex: 1; }
+.sample-view-out-items:nth-child(3) { flex: 1.5; }
+.sample-view-out-items:nth-child(4) { flex: 1; }
+.sample-view-out-items:nth-child(5) { flex: 1; }
+.sample-view-out-items:nth-child(6) { flex: 1; }
+ 
+.sample-view-out-items:nth-child(7) { flex: 1; }
+.sample-view-out-items:nth-child(9) { flex: 1; }
+}
+
+
+
+@media (max-width:1000px){
+
+  .web_container {
+    background-color: white;  
+    .web_btn {
+      margin: 8px !important;
+    }
+
+    border-bottom: dashed;
+    border-bottom-width: 2px;
+    border-bottom-color: lightslategrey;
+    
+    
+  }
+
+
+  .case-discount{  
+    text-decoration: line-through; 
+    font-weight: normal;
+    font-size: 11px;
+  }
+
+
+  .sample-view{
+    font-size: 75%;
+
+    flex-basis: 110% !important;
+
+
+    .subtitle{
+      color: dimgrey;
+      font-size: 10px;
+    }
+
+    .mat-raised-button{
+      
+      margin-left: 3px;
+      padding-left: 7px;
+       padding-right:7px;
+      // padding-left: 1px;
+      // padding-right: 1px;
+      width: auto !important;
+      min-width: unset;
+      font-size: 105%;
+      //min-width: 180px;
+    }  
+
+    .sample-button{
+      display: -webkit-flex;
+      display: flex;
+      align-items: center;
+      align-self: center;
+      justify-content: center;    
+
+}
+
+  }
+}
+
+
+
+
+// 앱화면
+@media (max-width: 768px) {
+
+  //웹화면 버튼 안 보임
+.web_container {
+  display: none;
+
+ 
+}
+  //부모 FAB 버튼
+.fab-container {
+  position: fixed;
+  bottom: 30px;
+  right: 30px;
+  z-index: 100;
+  display: -webkit-flex;
+  display: flex;
+  flex-direction: column-reverse;
+  align-items: flex-end;
+
+  //자식 과 부모 사이의 마진값
+  > div {
+    display: -webkit-flex;
+    display: flex;
+    flex-direction: column-reverse;
+    margin-bottom: 5px;
+
+    //버튼 사이 마진
+    button {
+      margin-bottom: 17px;
+    }
+  }
+}
+
+
+
+.case-discount{  
+  text-decoration: line-through; 
+  font-weight: normal;
+  font-size: 11px;
+}
+
+
+.fab-toggler {
+  float: right;
+  z-index: 100;
+}
+#fab-dismiss {
+position: fixed;
+top: 0;
+left: 0;
+right: 0;
+bottom: 0;
+z-index: 99;
+}
+.sample-view{
+  display: grid;
+  max-width: 100%;
+  max-height: 100%;
+  margin: 10px;
+  grid-template-rows: repeat(5, 1fr);
+  grid-template-columns: repeat(5, 1fr);
+
+  font-size: 90%;
+  flex-basis: 100% !important;
+
+  .subtitle{
+    color: dimgrey;
+    font-size: small;
+  }
+
+  
+  .mat-raised-button{ 
+    font-size: 91%;
+  }  
+
+  .sample-view-out{
+    grid-row-start: 1;
+    grid-row-end: 5;
+    grid-column-start: 1;
+    grid-column-end: 6;
+    display: grid;
+    grid-template-rows: repeat(3, 1fr);
+    grid-template-columns: repeat(2 , 1fr) ;
+  
+  }
+  
+  .sample-view-out-items:nth-child(1) {
+    grid-row-start: 1;
+    grid-row-end: 2;
+    grid-column-start: 1;
+    grid-column-end: 2;  
+    text-align: left;
+    padding-left: 5px;
+  }
+  .sample-view-out-items:nth-child(2) {
+    grid-row-start: 1;
+    grid-row-end: 2;
+    grid-column-start: 2;
+    grid-column-end: 3;
+    margin-left: 30px;
+    text-align: left;
+    padding-left: 5px;
+  }
+  .sample-view-out-items:nth-child(3) {
+    grid-row-start: 2;
+    grid-row-end: 3;
+    grid-column-start: 1;
+    grid-column-end: 2;
+    text-align: left;
+    padding-left: 5px;
+  }
+  .sample-view-out-items:nth-child(4) {
+    grid-row-start: 2;
+    grid-row-end: 3;
+    grid-column-start: 2;
+    grid-column-end: 3;
+    margin-left: 30px;
+    text-align: left;
+    padding-left: 5px;
+  }
+  .sample-view-out-items:nth-child(5) { 
+    grid-row-start: 3;
+    grid-row-end: 4;
+    grid-column-start: 1;
+    grid-column-end: 2;
+    text-align: left;
+    padding-left: 5px;
+  }
+  .sample-view-out-items:nth-child(6) { 
+    grid-row-start: 3;
+    grid-row-end: 4;
+    grid-column-start: 2;
+    grid-column-end: 3;
+    margin-left: 30px;
+    text-align: left;
+    padding-left: 5px;
+  }
+
+
+  // .sample-view-out-items:nth-child(7) { 
+  //   grid-row-start: 3;
+  //   grid-row-end: 4;
+  //   grid-column-start: 2;
+  //   grid-column-end: 3;
+  //   margin-left: 30px;
+  //   text-align: left;
+  //   padding-left: 5px;
+  //   font-size: 90%;
+  // }
+
+     .sample-button{
+      display: -webkit-flex;
+      grid-row-start: 5;
+      display: flex;
+      grid-row-end: 6;
+      grid-column-start: 2;
+      grid-column-end: 5;
+      align-items: center;
+      align-self: center;
+      justify-content: center;    
+
+}
+}
+.cart-delete{
+  display: -webkit-flex;
+  display: flex;
+  grid-row-start: 5;
+  grid-row-end: 6;
+  grid-column-start: 5;
+  grid-column-end: 6;
+  align-items: center;
+  align-self: center;
+  justify-content: flex-start;
+
+
+}
+.sample-toggle{
+  display: -webkit-flex;
+  display: flex;
+  grid-row-start: 5;
+  grid-row-end: 6;
+  grid-column-start: 1;
+  grid-column-end: 2;
+  align-self: center;
+  justify-content: left;
+}
+}

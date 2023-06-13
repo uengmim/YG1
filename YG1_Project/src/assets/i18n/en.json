@@ -1,0 +1,81 @@
+{
+    "mainTitle" : "ONLINE ORDERING SYSTEM",
+
+    "products" : "PRODUCTS",
+    "orders" : "ORDERS",
+    "cart" : "CART",
+    "favorites" : "FAVORITES",
+    "bulkOrder" : "BULK ORDER",
+    "orderForm" : "CREATE OREDEE FORM",
+    "account" : "ACCOUNT INFORMATION",
+    "editPassword" : "EDIT PASSWORD",
+    "editAccount" : "EDIT ACCOUNT",
+    "createUser" : "CREATE NEW USER",
+
+    "manual" : "USER MANUAL",
+
+    "signIn" : "SIGN IN",
+    "signOut" : "SIGN OUT",
+    "verify" : "SIGNED IN AS",
+
+    "globalFilter" : "GLOBAL FILTER",
+    "requirements" : "REQUIREMENTS",
+    "shipAddress" : "SHIPPING ADDRESS",
+    "addressManagement" : "ADDRESS MANAGEMENT",
+
+    "newShipAddress" : "NEW SHIPPING ADDRESS",
+    
+    "orderSelected" : "ORDER SELECTED ITEM(S)",
+    "deleteSelected" : "DELECTE SELECTED ITEM(S)",
+  
+    "cancle" : "CANCLE",
+    "submit" : "SUBMIT",
+    "edit" : "EDIT",
+    "delete" : "DELETE",
+    "search" : "SEARCH",
+    "fromDate" : "FROM DATE",
+    "toDate" : "TO DATE",
+
+    "productName" : "PRODUCT",
+    "productEdp" : "EDP NO.",
+    "productSize" : "MEASUREMENTS",
+    "productPrice" : "PRICE",
+    "productStock" : "STOCK",
+    "productPack" : "PKG",
+
+    "orderNo" : "ORDER NO.",
+    "orderDate" : "ORDER DATE",
+    "subtotalQty" : "SUBTOTAL QTY",
+    "subtotalPrice" : "SUBTOTAL PRICE",
+    "orderStatus" : "ORDER STATUS",
+    "orderRemark" : "REMARK",
+
+    "itmeNo" : "ITEM NO.",
+    "totalPrice" : "TOTAL PRICE",
+    "totalQty" : "TOTAL QTY",
+    "shipmentPrice" : "SHIPMENT PRICE",
+    "shipmentQty" : "SHIPMENT QTY",
+
+    "userName" : "USERNAME",
+    "userPassword" : "PASSWORD",
+    "userConfirm" : "CONFIRM PASSWORD",
+    "userAuthority" : "AUTHORITY",
+    "userLang" : "LANGUAGE",
+    "userCompany" : "COMPANY",
+    "userPlant" : "PLANT",
+    "userNo" : "USER NO.",
+
+    "cartQty" : "CART QTY",
+    "qty" : "QTY",
+    "quickOrder" : "QUICK ORDER",
+    
+    "verifyMsg" : "To continue, first verify it's you",
+    "editCartMsg" : "Edit the Cart's quantity?",
+    "orderMsg" : "Order the Current quantity?",
+    "ordersMsg" : "item(s) selected. Order the Current item(s)?",
+    "deleteItemMsgC" : "Delete from the Cart?",
+    "deleteItemsMsgC" : "item(s) selected. Delete from the Cart?",
+    "addFavoriteMsg" : "Add to the Favorites?",
+    "deleteItemMsgF" : "Delete from the Favorites?"
+    
+}

@@ -1,0 +1,171 @@
+.docs-navbar-header {
+    font-family: SFProText, "Apple SD Gothic Neo", AppleSDGothicNeo, "Malgun Gothic", "맑은 고딕", sans-serif;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    padding: 8px 16px;
+    background: white;
+    margin-left: 3%;
+    margin-right: 2%;
+  
+    > .mat-button {
+      &:last-child {
+        margin-left: auto;
+      }
+    } 
+  }
+  
+  .flex-spacer {
+    flex-grow: 1;
+  }
+  
+  .docs-yg1-logo {
+    height: 26px;
+    margin: 0 4px 3px 0;
+    vertical-align: middle;
+  }
+  
+  .docs-navbar-link {
+    text-decoration: inherit;
+    flex: 1;
+  }
+  
+  .docs-navbar {
+    display: none;
+  }
+  
+  .docs-navbar-show-small {
+    display: none;
+  }
+
+  .docs-navbar-hide-small2 {
+    display: none;
+  }
+
+  .badge-icon {
+    width: 0px;
+
+    .mat-badge-content{
+      width: auto;
+      top: -10px;
+      font-weight: 500;    
+      min-width: 16px;
+    }
+  }
+
+
+.container {
+  width: auto;
+  text-align: center;
+}
+
+
+.mat-form-field {
+  width: auto;
+  font-size: 14px;
+}
+
+::ng-deep .mat-select-trigger {
+ max-height: 400px;
+}
+
+
+::ng-deep .mat-select-panel {
+  max-height: 400px !important;
+}
+
+.radio_btn {
+  text-align: center;
+  background-color: white;
+  width: 100%;
+  height: 100%;
+  z-index: 100;
+}
+
+.mat-radio-button {
+  margin-right: 5%;
+}
+
+.select_filter {
+      position: -webkit-sticky;
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      
+      ::ng-deep .mat-progress-spinner {
+          margin: 0;
+          width: 25px !important;
+          height: 25px !important;
+      }
+      ::ng-deep .mat-progress-spinner svg {
+          width: 25px !important;
+          height: 25px !important;
+      }
+}
+
+  @media (max-width: 1380px) {
+
+    .docs-navbar-header {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      padding: 8px 16px;
+      background: white;
+      margin-left: 0%;
+      margin-right: 0%;
+    
+      > .mat-button {
+        &:last-child {
+          margin-left: auto;
+        }
+      } 
+    }
+    .mat-button{
+      font-size: 12px;
+      padding: 0 0px;
+      flex: auto;
+    }
+    .navbar-title {
+      display: none;
+    }
+    
+    .docs-navbar-hide-small {
+      display: none;
+    }
+
+    .docs-navbar-hide-small2 {
+        display: flex;
+      }
+  
+    .docs-navbar-show-small {
+      display: block;
+    }
+    .docs-navbar-show-small2 {
+      text-decoration: inherit;
+    flex: 1;
+    }
+
+    .docs-navbar {
+      display: flex;
+    }
+  
+    .container{
+      margin-left: 0
+  }
+
+  .mat-option {
+      font-size: 13px;
+  }
+  
+  ::ng-deep .mat-select-trigger {
+     max-height: 400px;
+     font-size: 13px;
+  }
+    
+    
+  ::ng-deep .mat-select-panel {
+      max-height: 400px !important;
+      font-size: 13px;
+  }
+  
+  }

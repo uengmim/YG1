@@ -1,0 +1,2 @@
+.\mvnw.cmd install:install-file -DgroupId="com.sap.conn.jco" -DartifactId=sapjco3 -Dversion="3.1.2" -Dpackaging=jar -Dfile="src/main/resources/lib/sapjco3.jar"
+.\mvnw.cmd install:install-file -DgroupId="com.sap.conn.jco" -DartifactId=sapjco3 -Dversion="3.1.2" -Dclassifier=ntamd64 -Dpackaging=dll -Dfile="src/main/resources/lib/sapjco3.dll"

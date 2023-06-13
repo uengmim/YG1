@@ -1,0 +1,15 @@
+<div>
+    <div mat-dialog-content>
+        <p> {{'orderMsg' | translate:param }} </p>
+        <mat-form-field>
+            <input matInput value={{data.ItemsCART}}>
+        </mat-form-field>
+    </div>
+    <div mat-dialog-actions>
+        <button mat-button (click)="onCancle()"> {{'cancle' | translate:param }} </button>
+        <button mat-button (click)="onOrder(data)"> {{'submit' | translate:param }} </button>
+        <!-- cdkFocusInitial 옵션을 넣으면 포커스가 들어감 -->
+
+    </div>
+
+</div>

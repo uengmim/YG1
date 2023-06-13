@@ -1,0 +1,380 @@
+<!-- <div>
+    <mat-form-field class="filter" floatLabel="never" placeholder="GlobalFilter">
+        <mat-label>
+            {{'globalFilter' | translate }}
+        </mat-label>
+        <input matInput [formControl]="globalFilter">
+    </mat-form-field>
+</div> -->
+<div class="docs-component-viewer-nav-content">
+    <form class="date-block" [formGroup]="filterForm">
+
+        <mat-form-field class="datePicker">
+            <input matInput [readonly]=true [matDatepicker]="fromDate" placeholder="{{'fromDate' | translate }}"
+                formControlName="fromDate" (dateChange)="focusOutDate()">
+            <mat-datepicker-toggle matSuffix [for]="fromDate"></mat-datepicker-toggle>
+            <mat-datepicker #fromDate></mat-datepicker>
+        </mat-form-field>
+
+        <mat-form-field class="datePicker">
+            <input matInput [readonly]=true [matDatepicker]="toDate" placeholder="{{'toDate' | translate }}"
+                formControlName="toDate" (dateChange)="focusOutDate()">
+            <mat-datepicker-toggle matSuffix [for]="toDate"></mat-datepicker-toggle>
+            <mat-datepicker #toDate></mat-datepicker>
+        </mat-form-field>
+
+    </form>
+</div>
+
+<div class="fitTable">
+    <table mat-table [dataSource]="dataSource" multiTemplateDataRows matSort matSortActive="orderNo"
+        matSortDirection="desc">
+        <ng-container matColumnDef="orderNo">
+            <th mat-header-cell *matHeaderCellDef mat-sort-header>{{'orderNo' | translate }}</th>
+            <td mat-cell *matCellDef="let element">
+                {{element.orderNo}}
+            </td>
+        </ng-container>
+        <!-- 
+    <ng-container matColumnDef="deliveryType">
+        <th mat-header-cell *matHeaderCellDef mat-sort-header>{{'deliveryType' | translate }}</th>
+        <td mat-cell *matCellDef="let element">
+            {{element.deliveryType}}
+        </td>
+    </ng-container> -->
+
+        <ng-container matColumnDef="custPono">
+            <th mat-header-cell *matHeaderCellDef mat-sort-header>{{'ponumber' | translate }}</th>
+            <td mat-cell *matCellDef="let element">
+                {{element.custPono}}
+            </td>
+        </ng-container>
+
+        <div *ngIf="authority !== 'CUSTOMER'">
+            <ng-container matColumnDef="soldTo">
+                <th mat-header-cell *matHeaderCellDef mat-sort-header>{{'userNo' | translate }}</th>
+                <td mat-cell *matCellDef="let element">
+                    {{element.soldTo}}<br>
+                    ({{element.soldToParty}})
+                </td>
+            </ng-container>
+        </div>
+
+
+        <ng-container matColumnDef="shipAddr">
+            <th mat-header-cell *matHeaderCellDef mat-sort-header>{{'shipAddress' | translate }}</th>
+            <td mat-cell *matCellDef="let element">
+                {{element.shipName}}
+            </td>
+        </ng-container>
+
+        <ng-container matColumnDef="orderDt">
+            <th mat-header-cell *matHeaderCellDef mat-sort-header>{{'orderDate' | translate }}</th>
+            <td mat-cell *matCellDef="let element">
+                {{element.orderDt | date:"medium" : language}}
+            </td>
+        </ng-container>
+
+
+        <ng-container matColumnDef="totalQty">
+            <th mat-header-cell *matHeaderCellDef mat-sort-header>{{'subtotalQty' | translate }}</th>
+            <td mat-cell *matCellDef="let element"> {{element.totalQty}} {{element.quantity}} </td>
+        </ng-container>
+
+        <ng-container matColumnDef="totalAm">
+            <th mat-header-cell *matHeaderCellDef mat-sort-header>{{'subtotalPrice' | translate }}</th>
+            <td mat-cell *matCellDef="let element">
+                <div *ngIf="element.currency === ''"> {{element.totalAm | currency : 'EUR'}} </div>
+                <div *ngIf="element.currency !== ''">{{element.totalAm | currency : element.currency}} </div>
+            </td>
+        </ng-container>
+
+
+        <ng-container matColumnDef="confirmYN">
+            <th mat-header-cell *matHeaderCellDef mat-sort-header>{{'orderStatus' | translate }}</th>
+            <td mat-cell *matCellDef="let element">
+                <p> {{element.confirmYN | translate}} </p>
+            </td>
+        </ng-container>
+
+        <div *ngIf="authority === 'CUSTOMER'">
+            <ng-container matColumnDef="remark">
+                <th mat-header-cell *matHeaderCellDef mat-sort-header>{{'orderRemark' | translate }}</th>
+                <td mat-cell *matCellDef="let element"> <input type="hidden" value="{{element.orderMsg}}" #message>
+                    <p class="test_web">{{element.remark}}</p>
+                </td>
+            </ng-container>
+        </div>
+
+        <ng-container matColumnDef="a-description">
+            <th mat-header-cell *matHeaderCellDef>
+                <mat-form-field class="filter" floatLabel="never">
+                    <mat-label>
+                        <mat-icon>search</mat-icon>
+                    </mat-label>
+                    <input matInput [formControl]="orderNumFilter">
+                </mat-form-field>
+            </th>
+        </ng-container>
+        <!--    
+    <ng-container matColumnDef="b-description">
+        <th mat-header-cell *matHeaderCellDef>
+            <mat-form-field class="filter" floatLabel="never">
+                <mat-label>
+                    <mat-icon>search</mat-icon>
+                </mat-label>
+                <input matInput [formControl]="deliveryFilter">
+            </mat-form-field>
+        </th>
+    </ng-container> -->
+
+        <ng-container matColumnDef="c-description">
+            <th mat-header-cell *matHeaderCellDef>
+                <mat-form-field class="filter" floatLabel="never">
+                    <mat-label>
+                        <mat-icon>search</mat-icon>
+                    </mat-label>
+                    <input matInput [formControl]="poNumFilter">
+                </mat-form-field>
+            </th>
+        </ng-container>
+
+        <ng-container *ngIf="authority !== 'CUSTOMER'" matColumnDef="d-description">
+            <th mat-header-cell *matHeaderCellDef>
+                <mat-form-field class="filter" floatLabel="never">
+                    <mat-label>
+                        <mat-icon>search</mat-icon>
+                    </mat-label>
+                    <input matInput [formControl]="customerFilter">
+                </mat-form-field>
+            </th>
+        </ng-container>
+
+        <ng-container matColumnDef="b-description">
+            <th mat-header-cell *matHeaderCellDef>
+                <mat-form-field class="filter" floatLabel="never">
+                    <mat-label>
+                        <mat-icon>search</mat-icon>
+                    </mat-label>
+                    <input matInput [formControl]="addressFilter">
+                </mat-form-field>
+            </th>
+        </ng-container>
+
+        <ng-container matColumnDef="e-description">
+            <th mat-header-cell *matHeaderCellDef>
+                <mat-form-field class="filter" floatLabel="never">
+                    <input matInput [formControl]="orderDateFilter" [matDatepicker]="filterDate">
+                    <mat-datepicker-toggle matSuffix [for]="filterDate"></mat-datepicker-toggle>
+                    <mat-datepicker #filterDate></mat-datepicker>
+                </mat-form-field>
+            </th>
+        </ng-container>
+        <ng-container matColumnDef="f-description">
+            <th mat-header-cell *matHeaderCellDef>
+                <mat-form-field class="filter" floatLabel="never">
+                    <mat-label>
+                        <mat-icon>search</mat-icon>
+                    </mat-label>
+                    <input matInput [formControl]="orderEAFilter">
+                </mat-form-field>
+            </th>
+        </ng-container>
+        <ng-container matColumnDef="g-description">
+            <th mat-header-cell *matHeaderCellDef>
+                <mat-form-field class="filter" floatLabel="never">
+                    <mat-label>
+                        <mat-icon>search</mat-icon>
+                    </mat-label>
+                    <input matInput [formControl]="orderPriceFilter">
+                </mat-form-field>
+            </th>
+        </ng-container>
+        <ng-container matColumnDef="h-description">
+            <th mat-header-cell *matHeaderCellDef>
+                <mat-form-field class="filter" floatLabel="never">
+                    <mat-label>
+                        <mat-icon>search</mat-icon>
+                    </mat-label>
+                    <input matInput [formControl]="orderStateFilter">
+                </mat-form-field>
+            </th>
+        </ng-container>
+        <ng-container *ngIf="authority === 'CUSTOMER'" matColumnDef="i-description">
+            <th mat-header-cell *matHeaderCellDef>
+                <mat-form-field class="filter" floatLabel="never">
+                    <mat-label>
+                        <mat-icon>search</mat-icon>
+                    </mat-label>
+                    <input matInput [formControl]="orderMsgFilter">
+                </mat-form-field>
+            </th>
+        </ng-container>
+
+
+
+
+        <!-- Expanded Content Column - The detail row is made up of this one column that spans across all columns -->
+        <ng-container matColumnDef="expandedDetail">
+            <ng-container matColumnDef="expandedDetail">
+                <td mat-cell *matCellDef="let parent;" [attr.colspan]="displayedColumns.length">
+                    <div class="example-element-detail"
+                        [@detailExpand]="parent == expandedElement ? 'expanded' : 'collapsed'">
+                        <table mat-table matTableExporter class="sub_table" [dataSource]="parent.orderInqueryList"
+                            #exporter="matTableExporter" [hidden]="isExcel">
+
+                            <ng-container matColumnDef="orderNo">
+                                <th mat-header-cell *matHeaderCellDef>{{'orderNo' | translate }}</th>
+                                <td mat-cell *matCellDef="let element">
+                                    {{parent.orderNo}}
+                                </td>
+                                <td mat-footer-cell *matFooterCellDef></td>
+                            </ng-container>
+
+
+                            <div *ngIf="authority !== 'CUSTOMER'">
+                                <ng-container matColumnDef="soldTo">
+                                    <th mat-header-cell *matHeaderCellDef>{{'userNo' | translate }}</th>
+                                    <td mat-cell *matCellDef="let element">
+                                        {{parent.soldTo}}
+                                    </td>
+                                    <td mat-footer-cell *matFooterCellDef></td>
+                                </ng-container>
+
+                            </div>
+
+                            <ng-container matColumnDef="orderDt">
+                                <th mat-header-cell *matHeaderCellDef>{{'orderDate' | translate }}</th>
+                                <td mat-cell *matCellDef="let element">
+                                    {{parent.orderDt | date:"medium" : language}}
+                                </td>
+                                <td mat-footer-cell *matFooterCellDef></td>
+                            </ng-container>
+
+                            <ng-container matColumnDef="edpNo">
+                                <th mat-header-cell *matHeaderCellDef>{{'productEdp' | translate }}</th>
+                                <td mat-cell *matCellDef="let element">{{element.edpNo}} </td>
+                                <td mat-footer-cell *matFooterCellDef></td>
+                            </ng-container>
+
+                            <ng-container matColumnDef="edpNm">
+                                <th mat-header-cell *matHeaderCellDef>{{'productName' | translate }}</th>
+                                <td mat-cell *matCellDef="let element"> {{element.edpNm}} </td>
+                                <td mat-footer-cell *matFooterCellDef></td>
+                            </ng-container>
+
+                            <ng-container matColumnDef="standard">
+                                <th mat-header-cell *matHeaderCellDef>{{'productSize' | translate }}</th>
+                                <td mat-cell *matCellDef="let element"> {{element.standard}} </td>
+                                <td mat-footer-cell *matFooterCellDef>Grand Total</td>
+                            </ng-container>
+
+                            <!-- <ng-container matColumnDef="remark">
+                            <th mat-header-cell *matHeaderCellDef>{{'orderRemark' | translate }}</th>
+                            <td mat-cell *matCellDef="let element">
+                                {{element.remark}}
+                            </td>
+                        </ng-container> -->
+
+                            <ng-container matColumnDef="orderAm">
+                                <th mat-header-cell *matHeaderCellDef>{{'totalPrice' | translate }}</th>
+                                <td mat-cell *matCellDef="let element">
+                                    {{element.orderAm * element.orderQty | currency : element.currency}}
+                                </td>
+                                <td mat-footer-cell *matFooterCellDef>
+                                    <div *ngIf="parent.currency === ''"> {{parent.totalAm | currency : 'EUR'}} </div>
+                                    <div *ngIf="parent.currency !== ''">{{parent.totalAm | currency : parent.currency}}
+                                    </div>
+                                </td>
+                            </ng-container>
+                            <ng-container matColumnDef="orderQty">
+                                <th mat-header-cell *matHeaderCellDef>{{'totalQty' | translate }}</th>
+                                <td mat-cell *matCellDef="let element"> {{element.orderQty}} {{element.quantity}} </td>
+                                <td mat-footer-cell *matFooterCellDef> {{parent.totalQty}} {{parent.quantity}} </td>
+                            </ng-container>
+
+
+                            <ng-container matColumnDef="sapOrderNo">
+                                <th mat-header-cell *matHeaderCellDef>{{'sapOrderNo' | translate }}</th>
+                                <td mat-cell *matCellDef="let element"> {{element.sapOrderNo}} </td>
+                                <td mat-footer-cell *matFooterCellDef></td>
+                            </ng-container>
+
+
+                            <ng-container matColumnDef="shipToParty">
+                                <th mat-header-cell *matHeaderCellDef>Ship-to party</th>
+                                <td mat-cell *matCellDef="let element"> {{parent.shipToParty}} </td>
+                                <td mat-footer-cell *matFooterCellDef></td>
+                            </ng-container>
+
+                            <ng-container matColumnDef="shipName">
+                                <th mat-header-cell *matHeaderCellDef>{{'shipName' | translate }}</th>
+                                <td mat-cell *matCellDef="let element"> {{parent.shipName}} </td>
+                                <td mat-footer-cell *matFooterCellDef></td>
+                            </ng-container>
+
+                            <ng-container matColumnDef="shipAddr">
+                                <th mat-header-cell *matHeaderCellDef>{{'shipAddress' | translate }}</th>
+                                <td mat-cell *matCellDef="let element"> {{parent.shipAddr}} </td>
+                                <td mat-footer-cell *matFooterCellDef></td>
+                            </ng-container>
+
+                            <ng-container matColumnDef="remark">
+                                <th mat-header-cell *matHeaderCellDef>{{'orderRemark' | translate }}</th>
+                                <td mat-cell *matCellDef="let element"> <input type="hidden" value="{{parent.orderMsg}}"
+                                        #message>
+                                    <p class="test_web">{{parent.remark}}</p>
+                                </td>
+                                <td mat-footer-cell *matFooterCellDef></td>
+                            </ng-container>
+
+                            <tr mat-header-row *matHeaderRowDef="displayedColumns2"></tr>
+                            <tr mat-row *matRowDef="let row; columns: displayedColumns2;"></tr>
+                            <tr mat-footer-row *matFooterRowDef="displayedColumns2" [hidden]="true"></tr>
+                        </table>
+
+                        <div style="display: flex; justify-content: center;">
+                            <button mat-button color="warn"
+                                (click)="excelDownload(exporter, parent.orderNo, parent.orderDt)">Excel
+                                Download
+                            </button>
+
+                            <div style="align-self: center;" [hidden]="!isExcel">
+                                <mat-spinner [diameter]="25" color="warn" [mode]="'indeterminate'">
+                                </mat-spinner>
+                            </div>
+                        </div>
+                    </div>
+                </td>
+            </ng-container>
+        </ng-container>
+
+        <div *ngIf="authority !== 'CUSTOMER'">
+            <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+            <tr mat-header-row
+                *matHeaderRowDef="['a-description', 'c-description', 'd-description', 'b-description', 'e-description', 'f-description', 'g-description', 'h-description']">
+            </tr>
+            <tr mat-row *matRowDef="let element; columns: displayedColumns;" class="example-element-row"
+                [class.example-expanded-row]="expandedElement === element"
+                (click)="expandedElement = expandedElement === element ? null : element">
+            </tr>
+        </div>
+
+        <!-- 'b-description' -->
+
+        <div *ngIf="authority === 'CUSTOMER'">
+            <tr mat-header-row *matHeaderRowDef="displayedColumnss; sticky: true"></tr>
+            <tr mat-header-row
+                *matHeaderRowDef="['a-description',  'c-description', 'b-description', 'e-description', 'f-description', 'g-description', 'h-description','i-description']">
+            </tr>
+            <tr mat-row *matRowDef="let element; columns: displayedColumnss;" class="example-element-row"
+                [class.example-expanded-row]="expandedElement === element"
+                (click)="expandedElement = expandedElement === element ? null : element">
+            </tr>
+        </div>
+        <tr mat-row *matRowDef="let row; columns: ['expandedDetail']; " class="example-detail-row"></tr>
+
+        <!-- 'b-description' -->
+    </table>
+</div>
+<mat-paginator [pageSizeOptions]="[5, 10, 15, 20]" showFirstLastButtons></mat-paginator>

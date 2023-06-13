@@ -1,0 +1,105 @@
+@import '../../../styles/constants';
+
+.smaple-chip{
+  margin-top: 100px;
+}
+
+@media (min-width: 771px) {
+  
+.sample-view{
+  display: flex;
+  max-width: 100%;
+  margin: 10px;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  justify-content: space-between;
+  align-items: stretch;
+  align-content: stretch;
+  text-align: center;
+
+}
+.sample-button{
+  flex-basis: 15%;
+
+  align-items: center;
+  text-align: center;
+}
+.sample-button-cart{
+  width: 150px;
+}
+.sample-button-order{
+  margin-top: 10px;
+  width: 150px;
+}
+
+.cart-delete{
+  flex-basis: 5%;
+  right: 5px;
+  align-self: center; 
+ 
+}
+.sample-toggle{
+  flex-basis: 5%;
+  align-self: center; 
+}
+.sample-view-out{
+  display: flex;
+  flex-basis: 75%;
+  margin: auto;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: stretch;
+  align-content: stretch;
+}
+
+
+.sample-view-out-items:nth-child(1) { flex: 2; }
+.sample-view-out-items:nth-child(2) { flex: 2; }
+.sample-view-out-items:nth-child(3) { flex: 2; }
+.sample-view-out-items:nth-child(4) { flex: 1; }
+.sample-view-out-items:nth-child(5) { flex: 1; }
+.sample-view-out-items:nth-child(6) { flex: 1; }
+ 
+}
+
+@media (max-width: 770px) {
+    
+.sample-view{
+  display: flex;
+  max-width: 100%;
+  margin: 10px;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: stretch;
+  align-content: space-around;
+
+}
+.sample-button{
+  flex-basis: 15;
+  margin: auto;
+}
+.sample-toggle{
+  flex-basis: 5%;
+  align-self: center; 
+}
+.sample-view-out{
+  font-size: 10px;
+  flex-basis: 75%;
+  margin: auto;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: stretch;
+  align-content: stretch;
+}
+
+.sample-view-out-items:nth-child(1) { flex: 2;}
+.sample-view-out-items:nth-child(2) { flex :1;}
+.sample-view-out-items:nth-child(3) { flex: 1;}
+.sample-view-out-items:nth-child(4) { flex: 1;}
+.sample-view-out-items:nth-child(5) { flex: 1;}
+.sample-view-out-items:nth-child(6) { flex: 1;}
+}
+

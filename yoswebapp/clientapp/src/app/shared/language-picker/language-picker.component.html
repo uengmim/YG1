@@ -1,0 +1,10 @@
+<button mat-button [matMenuTriggerFor]="menu">
+      <mat-icon>language</mat-icon>
+</button>
+<mat-menu #menu="matMenu">
+      <button mat-menu-item *ngFor="let lang of languageList" (click)="Switchlang(lang.code)"><span
+            data-bind="attr: {'class': flag, 'flag-name': flag},css:{'currency-flag':true}"
+            class="flag-icon-{{lang.code}} currency-flag" [ngStyle]="{'background-image': lang.image}"></span>
+        <span class="currency-label" data-bind="text: label" >{{lang.name}}</span></button>
+
+</mat-menu>

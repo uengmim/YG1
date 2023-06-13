@@ -1,0 +1,28 @@
+<button mat-button [matMenuTriggerFor]="menu">
+      <mat-icon>person</mat-icon>
+</button>
+<mat-menu #menu="matMenu">
+      <div class="yg1-menu">
+      <div *ngIf="loginService.isUserLoggedIn()">
+            {{ 'verify' | translate }} <b>{{getUser()}}</b>
+      </div>
+      <div [ngSwitch]='language'>
+            <a *ngSwitchCase="'ko'" mat-menu-item href="assets/files/Ordering System User Manual_Eng.pdf"
+                  target="_blank" download="Ordering System User Manual_Eng.pdf"> {{ 'manual' | translate }} </a>
+
+            <a *ngSwitchCase="'en'" mat-menu-item href="assets/files/Ordering System User Manual_Eng.pdf"
+                  target="_blank" download="Ordering System User Manual_Eng.pdf"> {{ 'manual' | translate }} </a>
+
+            <a *ngSwitchCase="'de'" mat-menu-item href="assets/files/Ordering System User Manual.pdf"
+                  target="_blank" download="Ordering System User Manual.pdf"> {{ 'manual' | translate }} </a>
+
+            <a *ngSwitchCase="'fr'" mat-menu-item href="assets/files/Ordering System User Manual.pdf"
+                  target="_blank" download="Ordering System User Manual.pdf"> {{ 'manual' | translate }} </a>
+
+            <a *ngSwitchDefault mat-menu-item href="assets/files/Ordering System User Manual.pdf"
+                  target="_blank" download="Ordering System User Manual.pdf"> {{ 'manual' | translate }} </a>
+      </div>
+      <button mat-menu-item routerLink="/settings">{{ 'account' | translate }}</button>
+      <button mat-menu-item (click)="Logout()">{{ 'signOut' | translate }}</button>
+</div>
+</mat-menu>

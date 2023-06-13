@@ -1,0 +1,13 @@
+<button mat-button [matMenuTriggerFor]="menu">
+      <mat-icon>person</mat-icon>
+</button>
+<mat-menu #menu="matMenu">
+      <div class="yg1-menu">
+      <div *ngIf="loginService.isUserLoggedIn()">
+            {{ 'verify' | translate:param }} <b>{{getUser()}}</b>
+      </div>
+      <button mat-menu-item>{{ 'manual' | translate:param }}</button>
+      <button mat-menu-item routerLink="/settings">{{ 'account' | translate:param }}</button>
+      <button mat-menu-item (click)="Logout()">{{ 'signOut' | translate:param }}</button>
+</div>
+</mat-menu>

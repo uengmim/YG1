@@ -1,0 +1,44 @@
+<div class="docs-component-viewer-nav">
+
+    <div class="docs-component-viewer-nav-content" *ngIf="router.url === '/product'">
+        <mat-form-field>
+            <input matInput placeholder="{{'productName' | translate:param }}">
+        </mat-form-field><br>
+        <button mat-button>{{'search' | translate:param }}</button>
+        <mat-form-field>
+            <input matInput placeholder="{{'productEdp' | translate:param }}">
+        </mat-form-field><br>
+        <button mat-button>{{'search' | translate:param }}</button>
+    </div>
+
+    <div class="docs-component-viewer-nav-content" *ngIf="router.url === '/orderinq'">
+        <form class="date-block" [formGroup]="filterForm">
+            <div class="date-block__list">
+                <mat-form-field>
+                    <input matInput [matDatepicker]="fromDate" placeholder="{{'fromDate' | translate:param }}" formControlName="fromDate">
+                    <mat-datepicker-toggle matSuffix [for]="fromDate"></mat-datepicker-toggle>
+                    <mat-datepicker #fromDate></mat-datepicker>
+                </mat-form-field>
+            </div>
+            <div class="date-block__list">
+                <mat-form-field>
+                    <input matInput [matDatepicker]="toDate" placeholder="{{'toDate' | translate:param }}" formControlName="toDate">
+                    <mat-datepicker-toggle matSuffix [for]="toDate"></mat-datepicker-toggle>
+                    <mat-datepicker #toDate></mat-datepicker>
+                </mat-form-field>
+            </div>
+            <button mat-button color="primary" class="primary" (click)="dateClick($event)">{{'submit' | translate:param }}</button>
+        </form>
+    </div>
+
+    <div class="docs-component-viewer-nav-content" *ngIf="router.url === '/register' || router.url === '/modify'">
+        <button mat-button>{{'editPassword' | translate:param }}</button><br>
+        <button mat-button routerLink="/modify">{{'editAccount' | translate:param }}</button><br>
+        <button mat-button routerLink="/register">{{'createUser' | translate:param }}</button>
+        <!-- <button mat-button>회원검색</button> -->
+    </div>
+
+    <!-- <div class="docs-component-viewer-nav-content" *ngIf="router.url.includes('orderform')">
+        배송지 관리
+    </div> -->
+</div>

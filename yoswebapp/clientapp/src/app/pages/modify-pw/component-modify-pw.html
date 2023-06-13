@@ -1,0 +1,77 @@
+<div class="container">
+    <div class="Subhead">
+        <h2 class="Subhead-heading">{{'changePassword' | translate }} ({{'userNo' | translate }})</h2>
+    </div>
+    <form [formGroup]="formGroup">
+        <mat-form-field *ngIf="auth === 'MASTER'">
+            <mat-select placeholder="{{'userPlant' | translate }}" formControlName="plant">
+                <mat-option *ngFor="let plantList of plantList" value="{{plantList.socode}}"
+                    (focusout)="focusOutPL(plantList.socode)">
+                    {{plantList.soname}}</mat-option>
+            </mat-select>
+        </mat-form-field>
+        <br>
+        <mat-form-field *ngIf="authority !== 'CUSTOMER'">
+            <mat-select placeholder="{{'userNo' | translate }}" formControlName="no">
+                <mat-select-filter [array]="idList" placeholder="ID Search" [displayMember]="'usrid'"
+                    (filteredReturn)="filteredList =$event"></mat-select-filter>
+                <mat-option *ngFor="let idList of filteredList" value="{{idList.usrid}}"
+                (focusout)="focusOutID(idList.usrid)">
+                    {{idList.usrid}}</mat-option>
+            </mat-select>
+        </mat-form-field>
+        <br>
+        <mat-form-field>
+            <input matInput type="password" placeholder="{{'newPw' | translate }}({{'userNo' | translate }})"
+                formControlName="password" (input)="onPasswordInput()">
+            <mat-error *ngIf="password.hasError('required')">{{'userPassword' | translate }} {{'requiredMsg' | translate }}</mat-error>
+            <mat-error *ngIf="password.hasError('minlength')">{{'charMsg' | translate }}
+            </mat-error>
+        </mat-form-field>
+        <br>
+        <mat-form-field>
+            <input matInput type="password" placeholder="{{'userConfirm' | translate }}({{'userNo' | translate }})"
+                formControlName="password2" (input)="onPasswordInput()" (keyup.enter)=changePw()>
+            <mat-error *ngIf="password2.hasError('required')">{{'cofirmMsg' | translate }}</mat-error>
+            <mat-error *ngIf="password2.invalid && !password2.hasError('required')">{{'matchMsg' | translate }}</mat-error>
+        </mat-form-field>
+    </form>
+    <button mat-button (click)=changePw() class="btn btn-success">
+        {{'change' | translate }}
+    </button>
+
+    <div class="Subhead">
+        <h2 class="Subhead-heading">{{'changeLanguage' | translate }} ({{'userNo' | translate }})</h2>
+    </div>
+    <form [formGroup]="formGroup">
+        <mat-form-field *ngIf="auth === 'MASTER'">
+            <mat-select placeholder="{{'userPlant' | translate }}" formControlName="plant">
+                <mat-option *ngFor="let plantList of plantList" value="{{plantList.socode}}"
+                    (focusout)="focusOutPL(plantList.socode)">
+                    {{plantList.soname}}</mat-option>
+            </mat-select>
+        </mat-form-field>
+        <br>
+        <mat-form-field *ngIf="authority !== 'CUSTOMER'">
+            <mat-select placeholder="{{'userNo' | translate }}" formControlName="no">
+                <mat-select-filter [array]="idList" placeholder="ID Search" [displayMember]="'usrid'"
+                    (filteredReturn)="filteredList =$event"></mat-select-filter>
+                <mat-option *ngFor="let idList of filteredList" value="{{idList.usrid}}"
+                (focusout)="focusOutID(idList.usrid)">
+                    {{idList.usrid}}</mat-option>
+            </mat-select>
+        </mat-form-field>
+        <br>
+        <mat-form-field>
+            <mat-select placeholder="{{'userLang' | translate }}" formControlName="language">
+                <mat-option *ngFor="let lang of languageList" value={{lang.code}}><span
+                        data-bind="attr: {'class': flag, 'flag-name': flag},css:{'currency-flag':true}"
+                        class="flag-icon-{{lang.code}} currency-flag" [ngStyle]="{'background-image': lang.image}"></span>
+                    <span class="currency-label" data-bind="text: label">{{lang.name}}</span></mat-option>
+            </mat-select>
+        </mat-form-field>
+    </form>
+    <button mat-button (click)=changeLa() class="btn btn-success">
+        {{'change' | translate }}
+    </button>
+</div>

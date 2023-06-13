@@ -1,0 +1,42 @@
+<button mat-button (click)="openSelectOrderDialog(selection.selected)">{{'orderSelected' | translate:param }}</button>
+
+<mat-card class="sample-view" *ngFor="let Cart of CartItems">
+    <div class="sample-toggle">
+        <mat-slide-toggle [color]="color" (click)="$event.stopPropagation()"
+            (change)="$event ? selection.toggle(Cart) : null" [checked]="selection.isSelected(Cart)"></mat-slide-toggle>
+    </div>
+    <div class="sample-view-out">
+        <div class="sample-view-out-items">
+            <p><b>{{'productName' | translate:param }}</b> <br> {{Cart.product}}</p>
+        </div>
+        <div class="sample-view-out-items">
+            <p><b>{{'productEdp' | translate:param }}</b> <br> {{Cart.edp}}</p>
+        </div>
+        <div class="sample-view-out-items">
+            <p><b>{{'productSize' | translate:param }}</b> <br> {{Cart.standard}}</p>
+        </div>
+        <div class="sample-view-out-items">
+            <p><b>{{'productPrice' | translate:param }}</b> <br> {{Cart.price | currency : 'KRW':'symbol-narrow'}}</p>
+        </div>
+        <div class="sample-view-out-items">
+            <p><b>{{'productStock' | translate:param }}</b> <br> {{Cart.stock}}</p>
+        </div>
+        <div class="sample-view-out-items">
+            <p><b>{{'productPack' | translate:param }}</b> <br> {{Cart.packing}}</p>
+        </div>
+    </div>
+    <div class="sample-button">
+        <div>
+            <button class="sample-button-cart" mat-raised-button (click)="openDialog(Cart.edp,Cart.cart,Cart)">
+                {{'qty' | translate:param }} ({{Cart.cart}})
+            </button>
+        </div>
+
+    </div>
+    <div class="cart-delete">
+        <button mat-button (click)="openDeleteDialog(Cart)">
+            <mat-icon>clear</mat-icon>
+        </button>
+
+    </div>
+</mat-card>

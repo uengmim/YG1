@@ -1,0 +1,87 @@
+@import '../../../styles/constants';
+
+.component-page-header {
+  display: -webkit-flex;
+  display: flex;
+  align-items: center;
+  background: #efefef;
+  height: 50px;
+  position: fixed;
+  top: 1;
+  left: 0;
+  right: 0;
+  z-index: 3;
+ 
+border-color: dimgrey;
+border-width: 2.5px;
+border-style: solid;
+border-left: none;
+border-right:none;
+border-bottom-width: 2.5px;
+
+  @media (max-width: $small-breakpoint-width) {
+    padding-left: 0;
+    padding-right: 0;
+    border-top-width: 1.0px;
+    border-bottom-width: 1.5px;
+  }
+}
+
+h1 {
+  font-family: SFProText, "Apple SD Gothic Neo", AppleSDGothicNeo, "Malgun Gothic", "맑은 고딕", sans-serif;
+  font-size: 20px;
+  margin-left: 4%;
+  margin-right: 0;
+  outline: none;
+
+ 
+
+  @media (max-width: $small-breakpoint-width) {
+    width: 90%;
+    padding: 24px 8px;
+    font-size: 20px;
+    margin-left: 0px;
+    margin-right: 0px;
+  }
+}
+
+.sidenav-toggle {
+  padding: 0;
+  margin: 8px;
+  min-width: 30px;
+  display: none;
+  @media (max-width: $small-breakpoint-width) {
+    display: -webkit-flex;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+
+  mat-icon {
+    font-size: 30px;
+    height: 30px;
+    width: 30px;
+    color: black;
+  }
+}
+
+.sidenav-toggle2 {
+  padding: 0;
+  margin: 8px;
+  min-width: 30px;
+  display: none;
+  @media (max-width: $small-breakpoint-width) {
+    display: -webkit-flex;
+    display: flex;
+    justify-content: right;
+  }
+
+
+  mat-icon {
+    font-size: 30px;
+    height: 30px;
+    width: 30px;
+    color: black;
+  }
+}

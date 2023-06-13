@@ -1,0 +1,91 @@
+.docs-navbar-header {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    padding: 8px 16px;
+    background: white;
+    margin-left: 10%;
+    margin-right: 9%;
+  
+    > .mat-button {
+      &:last-child {
+        margin-left: auto;
+      }
+    } 
+  }
+  
+  .flex-spacer {
+    flex-grow: 1;
+  }
+  
+  .docs-yg1-logo {
+    height: 26px;
+    margin: 0 4px 3px 0;
+    vertical-align: middle;
+  }
+  
+  .docs-navbar-link {
+    text-decoration: inherit;
+    flex: 1;
+  }
+  
+  .docs-navbar {
+    display: none;
+  }
+  
+  .docs-navbar-show-small {
+    display: none;
+  }
+
+  .docs-navbar-hide-small2 {
+    display: none;
+  }
+ 
+  
+  /**
+    * Rules for when the device is detected to be a small screen.
+    * Moves content two rows instead of one.
+    */
+  @media (max-width: 768px) {
+
+    .docs-navbar-header {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      padding: 8px 16px;
+      background: white;
+      margin-left: 0%;
+      margin-right: 0%;
+    
+      > .mat-button {
+        &:last-child {
+          margin-left: auto;
+        }
+      } 
+    }
+    .navbar-title {
+      display: none;
+    }
+    
+    .docs-navbar-hide-small {
+      display: none;
+    }
+
+    .docs-navbar-hide-small2 {
+        display: flex;
+      }
+  
+    .docs-navbar-show-small {
+      display: block;
+    }
+    .docs-navbar-show-small2 {
+      text-decoration: inherit;
+    flex: 1;
+    }
+
+    .docs-navbar {
+      display: flex;
+    }
+  
+  
+  }

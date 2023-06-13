@@ -1,0 +1,25 @@
+<div class="container">
+  <div class="login_main">
+    <form class="example-form">
+      <mat-form-field class="example-full-width">
+        <input matInput placeholder="username" [formControl]="nameFormControl" [errorStateMatcher]="matcher"
+          name="username" [(ngModel)]="username">
+        <mat-error *ngIf="nameFormControl.hasError('required')">
+          Username is <strong>required</strong>
+        </mat-error>
+      </mat-form-field>
+    </form>
+    <form class="example-form">
+      <mat-form-field class="example-full-width">
+        <input matInput placeholder="password" type="password" [formControl]="passwordFormControl"
+          [errorStateMatcher]="matcher" name="userpassword" [(ngModel)]="password">
+        <mat-error *ngIf="passwordFormControl.hasError('required')">
+          UserPassword is <strong>required</strong>
+        </mat-error>
+      </mat-form-field>
+    </form>
+    <button mat-button color="primary" (click)=checkLogin() class="btn btn-success">
+      SIGN IN
+    </button>
+  </div>
+</div>

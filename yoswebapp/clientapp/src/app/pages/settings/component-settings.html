@@ -1,0 +1,17 @@
+<div class="container">
+    <form [formGroup]="formGroup">
+        <div>
+            <b >{{'verifyMsg' | translate }}</b>
+        </div>
+        <mat-form-field class="example-full-width">
+            <input matInput placeholder="{{ 'userPassword' | translate }}" type="password" formControlName="usrpw"
+            name="usrpw" (keyup.enter)="submit()">
+            <mat-error *ngIf="usrpw.hasError('required')">
+                Password is required
+            </mat-error>
+        </mat-form-field>
+    </form>
+    <button mat-button (click)="submit()" class="btn btn-success">
+        {{'check' | translate }}
+    </button>
+</div>

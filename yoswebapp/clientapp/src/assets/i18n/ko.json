@@ -1,0 +1,194 @@
+﻿{
+    "mainTitle" : "온라인 주문시스템",
+
+    "products" : "제품조회",
+    "orders" : "주문내역",
+    "cart" : "장바구니",
+    "favorites" : "주요품목",
+    "bulkOrder" : "대량주문",
+    "proxyOrder" : "대리주문",
+    "orderForm" : "주문서 작성",
+    "account" : "계정 정보",
+    "changePassword" : "비밀번호 변경",
+    "editAccount" : "정보수정",
+    "createAccount" : "고객등록",
+    "proxyBuying" : "구매대행",
+
+    "manual" : "사용자 메뉴얼",
+
+    "signIn" : "로그인",
+    "signOut" : "로그아웃",
+    "verify" : "로그인 아이디 : ",
+
+    "globalFilter" : "전체필터",
+    "requirements" : "요구사항",
+    "shipName": "배송지 이름",
+    "shipAddress" : "배송지",
+    "shipCode" : "배송코드",
+    "addressManagement" : "배송지 관리",
+
+    "enterShipAddress" : "새 배송지 입력",
+    
+    "orderSelected" : "선택제품 주문",
+    "deleteSelected" : "선택제품 삭제",
+
+    "ok" : "확인",
+    "check" : "확인",
+    "change" : "변경",
+    "cancel" : "닫기",
+    "edit" : "수정",
+    "delete" : "삭제",
+    "search" : "검색",
+    "proceedOrder" : "주문하기",
+    "create" : "등록",
+    "save" : "저장",
+    "continue" : "계속",
+
+    "fromDate" : "FROM DATE",
+    "toDate" : "TO DATE",
+
+    "productName" : "제품명",
+    "productEdp" : "EDP NO.",
+    "productSize" : "규격",
+    "productPrice" : "가격",
+    "productNetPrice" : "할인가",
+    "productStock" : "재고",
+    "productPack" : "포장 단위",
+
+    "orderNo" : "주문번호",
+    "orderDate" : "주문 날짜",
+    "subtotalQty" : "수량",
+    "subtotalPrice" : "금액",
+    "orderStatus" : "처리 현황",
+    "orderRemark" : "비고",
+    "sapOrderNo" : "SAP Order no.",
+
+    "itemNo" : "ITEM NO.",
+    "totalPrice" : "주문 금액",
+    "totalQty" : "주문 수량",
+    "shipmentPrice" : "출하 금액",
+    "shipmentQty" : "출하 수량",
+
+    "userName" : "아이디",
+    "userPassword" : "비밀번호",
+    "userConfirm" : "비밀번호 확인",
+    "userAuthority" : "권한",
+    "userLang" : "언어",
+    "userCompany" : "회사",
+    "userPlant" : "부서",
+    "userNo" : "고객 번호",
+
+    "currentPw" : "현재 비밀번호",
+    "newPw" : "새 비밀번호",
+    "confirmNewPw" : "새 비밀번호 확인",
+
+    "cartQty" : "장바구니",
+    "qty" : "수량",
+    "quickOrder" : "바로 주문",
+
+    "requiredMsg" : "는(은) 필요합니다.",
+    "cofirmMsg" : "비밀번호를 확인하세요",
+    "matchMsg" : "비밀번호가 일치하지 않습니다.",
+    "charMsg" : "비밀번호는 6자이상 이여야 합니다.",
+    "duplicateMsg" : "이미 등록된 아이디입니다. 다시 확인해주세요.",   
+
+    "bulkOrderMsg" : "주문형식의 확장자는 xlsx입니다.",
+    "bulkOrderMsg2" : "주문형식을 다운 받은 후, EXCEL을 이용해 작성해주세요.",
+
+    "verifyMsg" : "계속하려면, 먼저 본인임을 확인하세요.",
+    "editCartMsg" : "장바구니 수량을 변경 하시겠습니까?",
+    "orderMsg" : "현재 수량을 주문 하시겠습니까?",
+    "ordersMsg" : "개 제품을 주문 하시겠습니까?",
+    "deleteItemMsgC" : "장바구니에서 삭제 하시겠습니까?",
+    "deleteItemsMsgC" : "개 제품을 장바구니에서 삭제 하시겠습니까?",
+    "addFavoriteMsg" : "주요품목에 추가 하시겠습니까?",
+    "deleteItemMsgF" : "주요품목에서 삭제 하시겠습니까?",
+    "newShipToMsg" : "새 배송지 주소는 확인 후 처리됩니다.",
+
+    "errLoginMsg" : "로그인에 실패하였습니다.",
+    "errLoginMsg2" : "아이디또는 비밀번호가 맞지 않습니다.",
+    "errRegisterMsg" : "등록에 실패하였습니다.",
+    "errAddCart" : "장바구니에 추가하는데 실패하였습니다.",
+    "errAddFavorites" : "즐겨찾기에 추가하는데 실패하였습니다.",
+    
+    "errCheckOut" : "주문진행에 실패하였습니다.",
+    "errCallCart" : "장바구니 목록을 호출하는데 실패하였습니다.",
+    "errCallFavorites" : "즐겨찾기 목록을 호출하는데 실패하였습니다.",
+
+    "errReadfile" : "파일을 읽는 중 에러가 발생하였습니다.",
+    "errXlsx" : "xlsx형식의 파일을 업로드 해주세요.",
+    "errMissing" : "*temp 수량을 확인해주세요.",
+    "errNotExist" : "*temp는 존재하지 않는 제품입니다.",
+   
+    "emptyCart" : "장바구니에 담긴 상품이 없습니다.",
+    "emptyFavorites" : "즐겨찾기에 저장된 상품이 없습니다.",
+    "zeroQty" : "1개이상 수량을 입력해주세요.",
+    "lowItemCnt" : "주문하신 수량이 최소 포장단위보다 작습니다.\n소량 주문을 원하시는 경우 별도로 영업소에 연락주시기 바랍니다. :\n*temp",
+    "multiItemCnt" : "주문하신 수량이 포장단위의 배수가 아닙니다.\n다시 입력해주세요. :\n*temp",
+    "notMatchItem" : "주문수량 포장단위와 일치하지않습니다. 주문수량은 Packing unit에 따라 자동으로 올림 처리됩니다. :\n*temp",
+    "zeroItem" : "1개이상 상품을 선택해주세요.",
+
+    "createMsg" : "계정이 생성되었습니다.",
+    "blankMsg" : "빈칸없이 입력해주세요.",
+    "changePwMsg" :	"비밀번호가 변경 되었습니다.",
+    "changeLaMsg" : "언어가 변경되었습니다.",
+    "deleteUserMsg" : "계정이 삭제되었습니다.",
+    "notAvailableMsg" : "해당 결과가 없습니다. 관리자에게 문의 바랍니다.",
+
+    "masterOrderMsg" : "관리자는 주문 할 수 없습니다.",
+    "ponumMsg"	: "Please select a Po Number.",
+    "userSelectMsg"	: "고객을 선택하세요.",
+    "shipSelectMsg" : "배송지를 선택하세요.",
+    "orederSuccessMsg"	: "주문이 완료 되었습니다.",
+    "orderCheckMsg" : "고객의 제품리스트를 확인 해주세요.",
+
+    "noItemMsg" : "주문 할 제품이 없습니다.",
+
+    "noOrdesMsg" : "조회된 주문내역이 없습니다.",
+    
+    "minFiveMsg" : "5자리 이상 입력하세요.",
+    "askMasterMsg" :"관리자에게 문의하세요.",
+    "serverErrorMsg" : "서버와 연결에 실패 했습니다. 다시 시도 해주세요.",
+
+    "accountManagement" : "계정 관리",
+    "changeLanguage" : "언어 변경",
+    "orderWhole" : "전체제품 주문",
+    "deleteWhole" : "전체제품 삭제",
+
+    "shipCity" : "도시",
+    "shipPost" : "우편번호",
+    "shipTel" : "배송지 번호",
+
+    "username" : "계정 이름",
+    "userCity" : "도시",
+    "userAddr" : "주소",
+    "userPost" : "우편번호",
+    "userTel" : "전화번호",
+    "userDc" : "유통경로",
+
+    "myProfile" : "내 정보",
+
+    "confirmY" : "수주승인",
+    "confirmN" : "수주대기",
+    "cancleY" : "취소완료",
+    "cancleN" : "취소대기",
+
+    "deliveryType" : "배송유형",
+
+    "ponumber" : "Po Number",
+
+    "downloadForm" : "Download orderform",
+
+    "findshipName" : "배송지로 검색",
+    "findshipPost" : "우편번호로 검색",
+    "option" : "선택",
+
+    "domestic" : "내수",
+    "export" : "외수",
+    "versionUp" : "서버가 업데이트 되었습니다. 다시 로그인 해 주시기 바랍니다.",
+    "orderinfomsg" : "The freight costs are not included.",
+
+    "telnumRequiredMsg" : "Telephone number 는(은) 필요합니다.",
+    "contactnameRequiredMsg" : "Contact name 는(은) 필요합니다.",
+    "emailRequiredMsg" : "Mail address 는(은) 필요합니다."
+}

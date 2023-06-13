@@ -1,0 +1,26 @@
+    <div mat-dialog-content class="content">
+        <p>{{'changePassword' | translate }}</p>
+    </div>
+    <div style="text-align: center;">
+        <form [formGroup]="formGroup">         
+            <mat-form-field>
+                <input matInput type="password" placeholder="{{'newPw' | translate }}({{'userNo' | translate }})"
+                    formControlName="password" (input)="onPasswordInput()">
+                <mat-error *ngIf="password.hasError('required')">{{'userPassword' | translate }} {{'requiredMsg' | translate }}</mat-error>
+                <mat-error *ngIf="password.hasError('minlength')">{{'charMsg' | translate }}
+                </mat-error>
+            </mat-form-field>
+            <br>
+            <mat-form-field>
+                <input matInput type="password" placeholder="{{'userConfirm' | translate }}({{'userNo' | translate }})"
+                    formControlName="password2" (input)="onPasswordInput()" (keyup.enter)=changePw()>
+                <mat-error *ngIf="password2.hasError('required')">{{'cofirmMsg' | translate }}</mat-error>
+                <mat-error *ngIf="password2.invalid && !password2.hasError('required')">{{'matchMsg' | translate }}</mat-error>
+            </mat-form-field>
+        </form>
+    </div>
+    <div mat-dialog-actions class="actiondig">
+        <button mat-button (click)="changePw()" > {{'save' | translate }} </button>
+        <button mat-button (click)="onCancel()"> {{'cancel' | translate }} </button>
+
+    </div>

@@ -1,0 +1,6 @@
+[
+    {"name" : "한국어", "code" : "ko", "image" : "url(/assets/img/yg-1_intro_ko.png)"},
+    {"name" : "English", "code" : "en", "image" : "url(/assets/img/yg-1_intro_en.png)"},
+    {"name" : "Français", "code" : "fr", "image" : "url(/assets/img/yg-1_intro_fr.png)"},
+    {"name" : "Deutsch", "code" : "de", "image" : "url(/assets/img/yg-1_intro_de.png)"}
+]

@@ -1,0 +1,27 @@
+<div>
+    <div mat-dialog-actions>
+        <form [formGroup]="formGroup">
+            <mat-form-field>
+                <input matInput placeholder="{{'newShipAddress' | translate:param }}" formControlName="address">
+            </mat-form-field>
+            <button mat-button (click)="registerDestination()"> {{'submit' | translate:param }} </button>
+        </form>
+    </div>
+
+    <div mat-dialog-content>
+        <!-- <form [formGroup]="form" (ngSubmit)="submit()">
+            <label formArrayName="data" *ngFor="let destination of form.controls.data.controls; let i = index" >
+                <input type="checkbox" [formControlName]="i" style="width:20px;height:20px;">
+                <span style="font: size 20;">{{ordersData[i].address}}</span><br>
+            </label>
+            <button mat-button [disabled]="!form.valid">선택 삭제</button>
+        </form> -->
+        <div *ngFor="let destination of data;">
+            <mat-checkbox (click)="$event.stopPropagation()" (change)="$event ? selection.toggle(destination) : null"
+                [checked]="selection.isSelected(destination)">{{destination.address}}
+            </mat-checkbox>
+        </div>
+        <button mat-button (click)="removeSelectedRows()">{{'deleteSelected' | translate:param }}</button>
+        <button mat-button (click)="onDialogCancle()">{{'cancle' | translate:param }}</button>
+    </div>
+</div>

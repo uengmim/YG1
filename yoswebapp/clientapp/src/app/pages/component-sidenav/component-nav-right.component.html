@@ -1,0 +1,56 @@
+<div class="docs-component-viewer-nav" *ngIf="router.url.includes('settings/')">
+
+    <!-- <div class="docs-component-viewer-nav-content" *ngIf="router.url.includes('product/') && !router.url.includes('product/search')">
+        <mat-form-field>
+            <input #prdouctname matInput placeholder="{{'productName' | translate }}"
+                (keyup.enter)="searchByname(prdouctname.value)">
+        </mat-form-field><br>
+        <button mat-button (click)="searchByname(prdouctname.value)">{{'search' | translate }}</button><br>
+        <mat-form-field>
+            <input #prdouctcode matInput placeholder="{{'productEdp' | translate }}"
+                (keyup.enter)="searchBycode(prdouctcode.value)">
+        </mat-form-field><br>
+        <button mat-button (click)="searchBycode(prdouctcode.value)">{{'search' | translate }}</button>
+    </div> -->
+
+    <!-- <div class="docs-component-viewer-nav-content" *ngIf="router.url === '/orderinq'">
+        <form class="date-block" [formGroup]="filterForm">
+            <div class="date-block__list">
+                <mat-form-field>
+                    <input matInput [readonly]=true [matDatepicker]="fromDate" placeholder="{{'fromDate' | translate }}"
+                        formControlName="fromDate" (dateChange)="focusOutDate()">
+                    <mat-datepicker-toggle matSuffix [for]="fromDate"></mat-datepicker-toggle>
+                    <mat-datepicker #fromDate></mat-datepicker>
+                </mat-form-field>
+            </div>
+            <div class="date-block__list">
+                <mat-form-field>
+                    <input matInput [readonly]=true [matDatepicker]="toDate" placeholder="{{'toDate' | translate }}"
+                        formControlName="toDate" (dateChange)="focusOutDate()">
+                    <mat-datepicker-toggle matSuffix [for]="toDate"></mat-datepicker-toggle>
+                    <mat-datepicker #toDate></mat-datepicker>
+                </mat-form-field>
+            </div>
+            <button mat-button class="primary" (click)="dateClick($event)">{{'search' | translate }}</button>
+        </form>
+    </div> -->
+
+
+    <div class="col-3 float-left pr-4">
+        <nav class="menu position-relative">
+            <a class="menu-item"> <button mat-button routerLink="/settings/modify">
+                    {{'account' | translate }}</button></a>
+            <!-- <a class="menu-item" *ngIf="(auth === 'MASTER' || auth === 'MANAGER')"><button mat-button
+                    routerLink="/settings/modifypw">
+                    {{'accountManagement' | translate }}</button></a> -->
+
+            <a class="menu-item" *ngIf="(auth === 'MASTER' || auth === 'MANAGER')"><button mat-button
+                routerLink="/settings/management">
+                {{'accountManagement' | translate }}</button></a>
+    
+            <a class="menu-item" *ngIf="(auth === 'MASTER' || auth === 'MANAGER')"> <button mat-button
+                    routerLink="/settings/register">
+                    {{'createAccount' | translate }}</button></a>
+        </nav>
+    </div>
+</div>

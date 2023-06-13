@@ -1,0 +1,67 @@
+<mat-form-field>
+    <input matInput placeholder="{{'requirements' | translate:param }}">
+</mat-form-field>
+<br>
+<mat-form-field>
+    <mat-select placeholder="{{'shipAddress' | translate:param }}">
+        <mat-option *ngFor="let destination of destinations" [value]="destination.address">
+            {{destination.address}}
+        </mat-option>
+    </mat-select>
+</mat-form-field>
+<button mat-button (click)="openDestinationDialog(destinations)">{{'addressManagement' | translate:param }}</button>
+<table mat-table [dataSource]="dataSource">
+    <!-- Checkbox Column -->
+    <ng-container matColumnDef="select">
+        <th mat-header-cell *matHeaderCellDef>
+            <mat-checkbox (change)="$event ? masterToggle() : null" [checked]="selection.hasValue() && isAllSelected()"
+                [indeterminate]="selection.hasValue() && !isAllSelected()">
+            </mat-checkbox>
+        </th>
+        <td mat-cell *matCellDef="let row">
+            <mat-checkbox (click)="$event.stopPropagation()" (change)="$event ? selection.toggle(row) : null"
+                [checked]="selection.isSelected(row)">
+            </mat-checkbox>
+        </td>
+        <td mat-footer-cell *matFooterCellDef></td>
+    </ng-container>
+
+    <ng-container matColumnDef="edpNo">
+        <th mat-header-cell *matHeaderCellDef> {{'productEdp' | translate:param }}</th>
+        <td mat-cell *matCellDef="let element"> {{element.CartEDP}} </td>
+        <td mat-footer-cell *matFooterCellDef>Total</td>
+    </ng-container>
+
+    <ng-container matColumnDef="name">
+        <th mat-header-cell *matHeaderCellDef> {{'productName' | translate:param }} </th>
+        <td mat-cell *matCellDef="let element"> {{element.CartProduct}} </td>
+        <td mat-footer-cell *matFooterCellDef></td>
+    </ng-container>
+
+    <ng-container matColumnDef="price">
+        <th mat-header-cell *matHeaderCellDef> {{'productPrice' | translate:param }} </th>
+        <td mat-cell *matCellDef="let element"> {{element.CartPrice | currency : 'KRW':'symbol-narrow' }} </td>
+        <td mat-footer-cell *matFooterCellDef></td>
+    </ng-container>
+
+    <ng-container matColumnDef="orderEa">
+        <th mat-header-cell *matHeaderCellDef> {{'qty' | translate:param }} </th>
+        <td mat-cell *matCellDef="let element"> {{element.CartCount}} </td>
+        <td mat-footer-cell *matFooterCellDef></td>
+    </ng-container>
+
+    <ng-container matColumnDef="sum">
+        <th mat-header-cell *matHeaderCellDef> {{'totalPrice' | translate:param }} </th>
+        <td mat-cell *matCellDef="let element">
+            {{element.CartPrice * element.CartCount | currency : 'KRW':'symbol-narrow' }}</td>
+        <td mat-footer-cell *matFooterCellDef>{{getTotalSum() | currency : 'KRW':'symbol-narrow' }}</td>
+    </ng-container>
+
+    <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+    <tr mat-row *matRowDef="let row; columns: displayedColumns;" (click)="selection.toggle(row)"></tr>
+    <tr mat-footer-row *matFooterRowDef="displayedColumns"></tr>
+</table>
+
+<button mat-button color="primary">{{'submit' | translate:param }}</button>
+<button mat-button color="primary" (click)="removeSelectedRows()">{{'deleteSelected' | translate:param }}</button>
+<button mat-button color="primary" (click)="backPage()">{{'cancle' | translate:param }}</button>
